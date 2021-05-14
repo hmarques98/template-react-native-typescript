@@ -1,0 +1,33 @@
+{
+  "name": "@hmarques98/react-native-template",
+  "version": "2.0.2",
+  "description": "A minimal template with good architecture and common packages to let you focus on writing features right away.",
+  "scripts": {},
+  "files": [
+    "template",
+    "template.config.js"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hmarques98/react-native-template.git"
+  },
+  "keywords": [
+    "react",
+    "native",
+    "template",
+    "boilerplate",
+    "starter",
+    "typescript"
+  ],
+  "author": "Osama Qarem <osamaqarem@gmail.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/osamaq/react-native-template",
+  "release-it": {
+    "git": {
+      "commitMessage": "chore: release v${version}"
+    },
+    "github": {
+      "release": true
+    }
+  }
+}
