@@ -7,23 +7,20 @@ import Smile from 'assets/smile.svg';
 import { LanguageButton } from 'components/LanguageButton';
 import Counter from 'components/Counter';
 import { useTranslation } from 'react-i18next';
-// import * as CrispChatSdk from 'react-native-crisp-chat-sdk';
 import CustomScreen from 'components/CustomScreen';
 // import useStore from '@auth/store';
 import * as Sentry from '@sentry/react-native';
+import { useDispatch } from 'react-redux';
+import { setToken } from '@store/slices/auth';
 
 const Home = () => {
   const { t } = useTranslation();
-
+  const dispatch = useDispatch();
   // const setToken = useStore(({ setToken }) => setToken);
-
-  React.useEffect(() => {
-    // CrispChatSdk.setUserEmail('your_email@example.com');
-  }, []);
 
   const sendLoggedFiles = useCallback(() => {
     FileLogger.sendLogFilesByEmail({
-      to: 'jhmarques98gmail.com',
+      to: 'jhmarques98@gmail.com',
       subject: 'App logs',
       body: 'Attached logs',
     })
@@ -61,7 +58,11 @@ const Home = () => {
         fontWeight={'700'}
         textAlign={'center'}
         onPress={() => {
-          // setToken('');
+          dispatch(
+            setToken({
+              token: '',
+            }),
+          );
         }}
         my={20}
         testID={'btnLogout'}>
@@ -77,7 +78,5 @@ const Button = styled.TouchableOpacity`
   height: 48px;
   justify-content: space-evenly;
 `;
-
-Home.whyDidYouRender = true;
 
 export default Home;

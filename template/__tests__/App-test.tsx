@@ -10,6 +10,7 @@ import App from '../App';
 import renderer from 'react-test-renderer';
 jest.useFakeTimers();
 
+// eslint-disable-next-line jest/expect-expect
 it('renders correctly', async () => {
   renderer.create(<App />);
 });

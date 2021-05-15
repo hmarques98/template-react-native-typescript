@@ -6,6 +6,11 @@ import useKeychainBiometrics from '../hooks/useKeychainBiometrics';
 import useKeychainCredentials from '../hooks/useKeychainCredentials';
 // import useStore from '../store';
 import { useNavigation } from '@react-navigation/core';
+import { useDispatch, useSelector } from 'react-redux';
+import { authState } from '@store/slices';
+import { setToken } from '@store/slices/auth';
+import { log } from '@utils/console';
+// import { log } from 'src/utils/console';
 
 const Onboaring = () => {
   const { t } = useTranslation('onboarding');
@@ -14,15 +19,19 @@ const Onboaring = () => {
 
   const { userCredentials } = useKeychainCredentials();
 
-  // const setToken = useStore((state) => state.setToken);
-
+  const { token } = useSelector(authState);
+  const dispatch = useDispatch();
   useEffect(() => {
     if (userCredentials) {
       // Authentificate .then setToken
-      // setToken('blabla');
+      dispatch(
+        setToken({
+          token: '',
+        }),
+      );
     }
-  }, [userCredentials]);
-
+  }, [dispatch, userCredentials]);
+  log(token);
   return (
     <CustomScreen justifyContent={'space-evenly'} testID={'OnboardingScreen'}>
       <CustomText
@@ -30,8 +39,12 @@ const Onboaring = () => {
         testID={'btnSign'}
         onPress={() => {
           // Authentificate .then setToken .then setStoreCredentials
-          // setToken('blabla');
-          setStoreCredentials(true);
+          dispatch(
+            setToken({
+              token: 'dada',
+            }),
+          );
+          // setStoreCredentials(true);
         }}>
         {t('sign')}
       </CustomText>
@@ -41,13 +54,14 @@ const Onboaring = () => {
         onPress={() => {
           // Send reset email and then deeplink to ResetPassword
           navigate('ResetPassword');
+          setToken({
+            token: '',
+          });
         }}>
         {t('forgot')}
       </CustomText>
     </CustomScreen>
   );
 };
-
-Onboaring.whyDidYouRender = true;
 
 export default Onboaring;

@@ -26,6 +26,7 @@ module.exports = {
           'screens': './src/screens',
           '@utils': './src/utils',
           '@auth': './src/modules/auth',
+          '@store': './src/store',
         },
       },
     ],

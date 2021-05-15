@@ -5,7 +5,7 @@ import { space, SpaceProps, layout, LayoutProps, compose, typography, Typography
 
 interface StyleProps extends SpaceProps, TypographyProps, LayoutProps, TextProps {
   flex?: number | string;
-  color?: string;
+
   capitalize?: boolean;
   underline?: boolean;
   debug?: boolean;
@@ -23,7 +23,7 @@ const Container = styled(Text)<StyleProps>`
       : css``};
   text-align-vertical: center;
   text-decoration-line: ${({ underline }) => (underline ? 'underline' : 'none')};
-  color: ${({ color }) => color};
+  color: ${({ theme }) => theme.colors.main};
   ${({ capitalize }) =>
     capitalize
       ? css`
@@ -42,11 +42,7 @@ Container.defaultProps = {
 };
 
 const CustomText = ({ children, color, ...props }: PropsWithChildren<StyleProps>) => {
-  return (
-    <Container color={color ?? '#000'} {...props}>
-      {children}
-    </Container>
-  );
+  return <Container {...props}>{children}</Container>;
 };
 
 export default CustomText;

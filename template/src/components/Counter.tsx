@@ -7,9 +7,6 @@ import { useTranslation } from 'react-i18next';
 const MemoizedComponent = React.memo(() => <View />);
 const RerenderedComponent = () => <View />;
 
-MemoizedComponent.whyDidYouRender = true;
-RerenderedComponent.whyDidYouRender = true;
-
 const Counter = () => {
   const [counter, setCounter] = useState<number>(0);
   const { t } = useTranslation();

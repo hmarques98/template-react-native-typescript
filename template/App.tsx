@@ -12,6 +12,8 @@ import useNetworkError from 'hooks/useNetworkError';
 import useStartupTime from 'hooks/useStartupTime';
 // import useNotifications from 'hooks/useNotifications';
 import useAppState from 'react-native-appstate-hook';
+import { Provider } from 'react-redux';
+import store from './src/store';
 
 enableScreens();
 
@@ -43,7 +45,11 @@ const App = () => {
     onBackground: () => console.warn('App went to background'),
   });
 
-  return <Router />;
+  return (
+    <Provider store={store}>
+      <Router />
+    </Provider>
+  );
 };
 
 let codePushOptions: CodePushOptions = {
