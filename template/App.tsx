@@ -17,7 +17,6 @@ import store from './src/store';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 enableScreens();
-
 FileLogger.configure({
   maximumFileSize: 1024 * 1024 * 5, // 5MB,
   maximumNumberOfFiles: 3,

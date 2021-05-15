@@ -8,15 +8,11 @@ import { LanguageButton } from 'components/LanguageButton';
 import Counter from 'components/Counter';
 import { useTranslation } from 'react-i18next';
 import CustomScreen from 'components/CustomScreen';
-// import useStore from '@auth/store';
 import * as Sentry from '@sentry/react-native';
 import { useDispatch } from 'react-redux';
 import { setToken } from '@store/slices/auth';
 import useReactQuery from 'hooks/useReactQuery';
-import { log } from '@utils/console';
-import RNBootSplash from 'react-native-bootsplash';
-const twoMinutes = 1000 * 60 * 2;
-
+import AntDesign from 'react-native-vector-icons/AntDesign';
 const Home = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
@@ -24,7 +20,6 @@ const Home = () => {
   const { isLoading, data } = useReactQuery({
     queryName: 'credit_cards',
     path: 'credit_cards?_quantity=1',
-    refetchInterval: 10000,
   });
 
   const sendLoggedFiles = useCallback(() => {
@@ -60,12 +55,14 @@ const Home = () => {
       ) : (
         data.map((item) => {
           return (
-            <CustomText fontWeight={'700'} textAlign={'center'} my={20} testID={'btnCrispChat'}>
+            <CustomText key={item.number} fontWeight={'700'} textAlign={'center'} my={20} testID={'btnCrispChat'}>
               {item.number} - {item.owner}
             </CustomText>
           );
         })
       )}
+      <AntDesign name="star" size={30} color="#900" />
+      <AntDesign name="link" size={30} color="#900" />
       <CustomText fontWeight={'700'} textAlign={'center'} onPress={sendLoggedFiles} my={20} testID={'btnLogs'}>
         {t('sendLogs')}
       </CustomText>

@@ -15,7 +15,7 @@ const useReactQuery = ({ queryName, path, refetchInterval }: useReactQueryProps)
       return data;
     },
     {
-      refetchInterval: refetchInterval,
+      refetchInterval: refetchInterval ?? false,
       refetchOnWindowFocus: 'always',
     },
   );
