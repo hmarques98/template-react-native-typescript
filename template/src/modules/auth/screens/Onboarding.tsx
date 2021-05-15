@@ -31,7 +31,7 @@ const Onboaring = () => {
       );
     }
   }, [dispatch, userCredentials]);
-  log(token);
+
   return (
     <CustomScreen justifyContent={'space-evenly'} testID={'OnboardingScreen'}>
       <CustomText

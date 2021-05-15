@@ -14,6 +14,7 @@ import useStartupTime from 'hooks/useStartupTime';
 import useAppState from 'react-native-appstate-hook';
 import { Provider } from 'react-redux';
 import store from './src/store';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 enableScreens();
 
@@ -29,6 +30,7 @@ if (typeof SENTRY_DSN === 'string' && SENTRY_DSN.length > 0) {
     dsn: SENTRY_DSN,
   });
 }
+const queryClient = new QueryClient();
 
 const App = () => {
   // useNotifications();
@@ -47,7 +49,9 @@ const App = () => {
 
   return (
     <Provider store={store}>
-      <Router />
+      <QueryClientProvider client={queryClient}>
+        <Router />
+      </QueryClientProvider>
     </Provider>
   );
 };

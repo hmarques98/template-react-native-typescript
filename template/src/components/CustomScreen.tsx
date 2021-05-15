@@ -15,6 +15,7 @@ import {
   FlexboxProps,
 } from 'styled-system';
 import StatusBar from './StatusBar';
+import { myTheme } from '../../theme';
 
 interface StyleProps extends SpaceProps, LayoutProps, ColorProps, FlexboxProps, NativeSafeAreaViewProps {}
 
@@ -37,7 +38,7 @@ export default function CustomScreen({ children, statusBarStyle, statusBarColor,
   return (
     <>
       <StatusBar barStyle={statusBarStyle || barStyle} backgroundColor={statusBarColor || barColor} />
-      <Container backgroundColor={isDarkMode ? BLACK : WHITE} {...props}>
+      <Container backgroundColor={myTheme.colors.white} {...props}>
         {children}
       </Container>
     </>

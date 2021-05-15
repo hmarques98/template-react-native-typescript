@@ -1,12 +1,12 @@
 import { useDispatch } from 'react-redux';
-import { applyMiddleware, configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit';
 import rootReducer from './rootReducer';
 import { log } from '../utils/console';
 import { ENV } from '@env';
 
 export type RootState = ReturnType<typeof store.getState>;
 log({ ENV });
-const middlewares = [];
+const middlewares: any[] = [];
 const dev = ENV === 'dev';
 if (dev) {
   const createDebugger = require('redux-flipper').default;
@@ -15,7 +15,7 @@ if (dev) {
 const store = configureStore({
   reducer: rootReducer,
   devTools: dev,
-  // middleware: (getDefaultMiddlewares) => getDefaultMiddlewares(applyMiddleware(...middlewares)),
+  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
 });
 
 export type AppDispatch = typeof store.dispatch;

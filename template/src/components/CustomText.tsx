@@ -23,7 +23,7 @@ const Container = styled(Text)<StyleProps>`
       : css``};
   text-align-vertical: center;
   text-decoration-line: ${({ underline }) => (underline ? 'underline' : 'none')};
-  color: ${({ theme }) => theme.colors.main};
+  color: ${({ theme }) => theme.colors.primary};
   ${({ capitalize }) =>
     capitalize
       ? css`

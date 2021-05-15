@@ -27,6 +27,7 @@ module.exports = {
           '@utils': './src/utils',
           '@auth': './src/modules/auth',
           '@store': './src/store',
+          '@services': './src/services',
         },
       },
     ],

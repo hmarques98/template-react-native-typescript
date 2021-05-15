@@ -12,11 +12,20 @@ import CustomScreen from 'components/CustomScreen';
 import * as Sentry from '@sentry/react-native';
 import { useDispatch } from 'react-redux';
 import { setToken } from '@store/slices/auth';
+import useReactQuery from 'hooks/useReactQuery';
+import { log } from '@utils/console';
+import RNBootSplash from 'react-native-bootsplash';
+const twoMinutes = 1000 * 60 * 2;
 
 const Home = () => {
   const { t } = useTranslation();
   const dispatch = useDispatch();
-  // const setToken = useStore(({ setToken }) => setToken);
+
+  const { isLoading, data } = useReactQuery({
+    queryName: 'credit_cards',
+    path: 'credit_cards?_quantity=1',
+    refetchInterval: 10000,
+  });
 
   const sendLoggedFiles = useCallback(() => {
     FileLogger.sendLogFilesByEmail({
@@ -45,12 +54,18 @@ const Home = () => {
         <LanguageButton language={'en'} />
         <LanguageButton language={'ro'} />
       </View>
-      <CustomText fontWeight={'700'} textAlign={'center'} mt={60} mb={20}>
-        {t('hello')}
-      </CustomText>
-      {/* <CustomText fontWeight={'700'} textAlign={'center'} onPress={CrispChatSdk.show} my={20} testID={'btnCrispChat'}>
-        {t('chat')}
-      </CustomText> */}
+      <CustomText fontWeight={'700'} textAlign={'center'} mt={60} mb={20} />
+      {isLoading ? (
+        <CustomText>Ta carregando porra</CustomText>
+      ) : (
+        data.map((item) => {
+          return (
+            <CustomText fontWeight={'700'} textAlign={'center'} my={20} testID={'btnCrispChat'}>
+              {item.number} - {item.owner}
+            </CustomText>
+          );
+        })
+      )}
       <CustomText fontWeight={'700'} textAlign={'center'} onPress={sendLoggedFiles} my={20} testID={'btnLogs'}>
         {t('sendLogs')}
       </CustomText>

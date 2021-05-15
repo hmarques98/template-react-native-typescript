@@ -1,11 +1,14 @@
 import { DefaultTheme } from 'styled-components';
+import { colors, spacing, typography } from './src/styles/index';
 
 const myTheme: DefaultTheme = {
-  borderRadius: '5px',
+  borderRadius: spacing.RADIUS,
 
   colors: {
-    main: 'red',
-    secondary: 'magenta',
+    primary: colors.PRIMARY,
+    secondary: colors.SECONDARY,
+    black: colors.BLACK,
+    white: colors.WHITE,
   },
 };
 

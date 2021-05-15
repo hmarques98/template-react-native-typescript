@@ -41,6 +41,7 @@
       "@auth/*": ["src/modules/auth/*"],
       "@utils/*": ["src/utils/*"],
       "@store/*": ["src/store/*"],
+      "@services/*": ["src/services/*"],
       "hooks/*": ["src/hooks/*"],
       "*": ["*", "src/*"]
     } /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. */,

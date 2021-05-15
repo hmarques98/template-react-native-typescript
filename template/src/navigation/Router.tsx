@@ -11,6 +11,7 @@ import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../theme';
 import { useSelector } from 'react-redux';
 import { authState } from '../store/slices';
+import RNBootSplash from 'react-native-bootsplash';
 
 const screenOptions = {
   cardStyle: { backgroundColor: WHITE },
@@ -31,9 +32,16 @@ export default function Router() {
   const { token } = useSelector(authState);
 
   return (
-    <NavigationContainer linking={linking} ref={navigationRef}>
-      <SafeAreaProvider>
-        <ThemeProvider theme={myTheme}>
+    <ThemeProvider theme={myTheme}>
+      <NavigationContainer
+        linking={linking}
+        ref={navigationRef}
+        onReady={() => {
+          setTimeout(() => {
+            RNBootSplash.hide({ fade: true }); // fade
+          }, 3000);
+        }}>
+        <SafeAreaProvider>
           <Stack.Navigator screenOptions={screenOptions}>
             {Object.entries({
               // Use some screens conditionally based on some condition
@@ -44,8 +52,8 @@ export default function Router() {
               return <Stack.Screen key={name} name={name as keyof ParamList} {...props} />;
             })}
           </Stack.Navigator>
-        </ThemeProvider>
-      </SafeAreaProvider>
-    </NavigationContainer>
+        </SafeAreaProvider>
+      </NavigationContainer>
+    </ThemeProvider>
   );
 }

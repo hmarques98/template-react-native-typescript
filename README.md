@@ -168,7 +168,7 @@ Hooks for fetching, caching and updating asynchronous data in React.
 
 ### AXIOS
 
-## #TODO BENEFITS
+I like to used axios because your interceptors configurations.
 
 ### Redux/Redux Toolkit
 
@@ -211,6 +211,24 @@ This is similar to [redux-sentry-middleware](https://github.com/vidit-sh/redux-s
 ### react-native-bootsplash
 
 Works great for controlling your splash screen.
+To help about lib
+
+```bash
+$ npx react-native generate-bootsplash --help
+```
+
+Full command usage example to put your SplashScreen
+
+```bash
+npx react-native generate-bootsplash assets/splash.png \
+  --background-color=F5FCFF \
+  --logo-width=100 \
+  --assets-path=assets \
+  --flavor=main
+```
+
+Only iOS follow this instructions from library [BootSplash](https://github.com/zoontek/react-native-bootsplash)
+where is saying `Set the BootSplash.storyboard as launch screen file:`
 
 ### react-native-svg
 
@@ -313,6 +331,7 @@ root
     |   └── useNotification.tsx
     |   └── usePrevious.tsx
     |   └── useStartupTime.tsx
+    |   └── useReactQuery.tsx
     └── localization
     |   └── resources
     |   |   └── en.json
@@ -343,6 +362,13 @@ root
     └── utils
         ├── colors.ts
         └── console.ts
+    └── services
+        ├── axiosConfig.ts
+    └── styles
+        ├── colors.ts
+        ├── typography.ts
+        ├── spacing.ts
+        ├── index.ts
 
 ```
 
