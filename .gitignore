@@ -65,3 +65,4 @@ buck-out/
 template/ios/Pods/
 template/android/build/
 
+.DS_Store

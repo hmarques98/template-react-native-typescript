@@ -1,6 +1,6 @@
 {
   "name": "@hmarques98/react-native-template-typescript",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A minimal template with good architecture and common packages to let you focus on writing features right away.",
   "scripts": {},
   "files": [
@@ -12,12 +12,31 @@
     "url": "git+https://github.com/hmarques98/template-react-native-typescript.git"
   },
   "keywords": [
-    "react",
-    "native",
+    "react-native",
+    "typescript",
+    "jest",
     "template",
     "boilerplate",
     "starter",
-    "typescript"
+    "typescript",
+    "absolute",
+    "imports",
+    "navigation",
+    "svg",
+    "webview",
+    "async",
+    "storage",
+    "styled",
+    "components",
+    "bundle",
+    "visualiser",
+    "husky",
+    "git",
+    "hooks",
+    "startup",
+    "time",
+    "fast-image",
+    "sentry"
   ],
   "author": "Henrique Marques <marquesprogrammer@hotmail.com>",
   "license": "MIT",
