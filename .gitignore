@@ -32,8 +32,7 @@ template/*.iml
 # Visual Studio Code
 #
 .vscode/
-template/.env
-template/.env.prod
+
 
 # node.js
 #
@@ -67,3 +66,6 @@ template/ios/Podfile.lock
 template/android/build/
 
 .DS_Store
+
+template/.env
+template/.env.prod
