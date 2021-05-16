@@ -33,7 +33,7 @@ template/*.iml
 #
 .vscode/
 template/.env
-template/.env*
+template/.env.prod
 
 # node.js
 #

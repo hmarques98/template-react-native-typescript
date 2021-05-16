@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "StarWarsApp",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -61,7 +61,7 @@
     "@storybook/addon-ondevice-actions": "^5.3.23",
     "@storybook/addon-ondevice-knobs": "^5.3.25",
     "@storybook/react-native": "^5.3.25",
-    "@testing-library/jest-native": "^3.4.3",
+    "@testing-library/jest-native": "^4.0.1",
     "@testing-library/react-hooks": "^5.1.0",
     "@testing-library/react-native": "^7.2.0",
     "@types/detox": "^17.14.0",
@@ -94,35 +94,6 @@
   },
   "resolutions": {
     "@types/react": "^17"
-  },
-  "jest": {
-    "testEnvironment": "node",
-    "setupFiles": [
-      "./jest.setup.js",
-      "./node_modules/react-native-gesture-handler/jestSetup.js",
-      "./node_modules/react-native/jest/setup.js",
-      "./node_modules/react-native/Libraries/Utilities/__mocks__/BackHandler.js"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
-    ],
-    "preset": "react-native",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ],
-    "moduleNameMapper": {
-      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js",
-      "\\.(css|less)$": "/assetsTransformer.js",
-      "\\.svg": "<rootDir>/__mocks__/svgMocks.js"
-    },
-    "transformIgnorePatterns": [
-      "node_modules/(?!(jest-)?react-native|@react-native-community|@react-navigation)"
-    ]
   },
   "lint-staged": {
     "*.{js,ts,tsx}": [
