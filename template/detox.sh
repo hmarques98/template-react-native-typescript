@@ -16,3 +16,4 @@ fi
 echo "Executing Detox tests... with $WORKERS workers"
 npx detox test --configuration $1 --workers $WORKERS;
 exit
+
