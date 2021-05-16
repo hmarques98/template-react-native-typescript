@@ -51,7 +51,7 @@ const Home = () => {
       </View>
       <CustomText fontWeight={'700'} textAlign={'center'} mt={60} mb={20} />
       {isLoading ? (
-        <CustomText>Ta carregando porra</CustomText>
+        <CustomText>IS LOADING</CustomText>
       ) : (
         data.map((item) => {
           return (

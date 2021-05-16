@@ -1,24 +1,24 @@
 ## File Walkthrough
 
-In addition to configuring many libraries, this template also includes some boilerplate files that end up in most apps (e.g. theme). These files/components serve mainly as examples and are meant for you to change and expand upon or remove if unneeded.
+In addition to configuring many libraries, this HelloWorld also includes some boilerplate files that end up in most apps (e.g. theme). These files/components serve mainly as examples and are meant for you to change and expand upon or remove if unneeded.
 
 ### ./ (**root**)
 
-| File                          | Description                                                                                                                                                                                                                                                                                                                                 |
-| :---------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| eslintrc.js                   | My preferred eslint confugration. Configured for TypeScript and to ignore rules from prettier.                                                                                                                                                                                                                                              |
-| .detoxrc.json                 | Configuration for running detox e2e tests. Please see go through detox documentation to learn how to use it ([Android](https://github.com/wix/Detox/blob/master/./Introduction.Android.md#2-apply-detox-configuration), [iOS](https://github.com/wix/Detox/blob/master/./Introduction.Ios.md#2-apply-detox-configuration)).                 |
-| .env, .env.staging, .env.prod | Environment variables used with react-native-config. If you modify these, the app must be rebuilt to reflect changes. Additionally, you can get type autocomplete by generating the types using [this npm script](https://github.com/osamaq/react-native-template/blob/acc4f4ab117bee099a531ad44be1130f9d24df69/template/package.json#L23). |
-| jest.config.js, jest.setup.js | Configration for Mirage JS to allow its usage in jest unit tests.                                                                                                                                                                                                                                                                           |
-| react-native.config.js        | Extra configuration such that running `react-native-link` will automatically add our custom fonts under `./src/common/assets/fonts` to our native iOS and Android projects making them available for use.                                                                                                                                   |
-| reactotron.ts                 | Setup for Reactotron. We also attach it to the globally available console instance in `__DEV__` for convenience.                                                                                                                                                                                                                            |
-| tsconfig.json                 | TypeScript configuration.                                                                                                                                                                                                                                                                                                                   |
-| Gemfile                       | Main Gemfile. References our list of dependencies (plugins) for our fastlane setup.                                                                                                                                                                                                                                                         |
-| App.tsx                       | The root of our app. Contains setup to enable react-native-screens, initialize Sentry, enable LayoutAnimation for Android, instantiate our Mirage JS server. The app component renders our root error boundary, our redux store provider, our portal provider and our root navigator.                                                       |
+| File                          | Description                                                                                                                                                                                                                                                                                                                                     |
+| :---------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| eslintrc.js                   | My preferred eslint confugration. Configured for TypeScript and to ignore rules from prettier.                                                                                                                                                                                                                                                  |
+| .detoxrc.json                 | Configuration for running detox e2e tests. Please see go through detox documentation to learn how to use it ([Android](https://github.com/wix/Detox/blob/master/./Introduction.Android.md#2-apply-detox-configuration), [iOS](https://github.com/wix/Detox/blob/master/./Introduction.Ios.md#2-apply-detox-configuration)).                     |
+| .env, .env.staging, .env.prod | Environment variables used with react-native-config. If you modify these, the app must be rebuilt to reflect changes. Additionally, you can get type autocomplete by generating the types using [this npm script](https://github.com/osamaq/react-native-HelloWorld/blob/acc4f4ab117bee099a531ad44be1130f9d24df69/HelloWorld/package.json#L23). |
+| jest.config.js, jest.setup.js | Configration for Mirage JS to allow its usage in jest unit tests.                                                                                                                                                                                                                                                                               |
+| react-native.config.js        | Extra configuration such that running `react-native-link` will automatically add our custom fonts under `./src/common/assets/fonts` to our native iOS and Android projects making them available for use.                                                                                                                                       |
+| reactotron.ts                 | Setup for Reactotron. We also attach it to the globally available console instance in `__DEV__` for convenience.                                                                                                                                                                                                                                |
+| tsconfig.json                 | TypeScript configuration.                                                                                                                                                                                                                                                                                                                       |
+| Gemfile                       | Main Gemfile. References our list of dependencies (plugins) for our fastlane setup.                                                                                                                                                                                                                                                             |
+| App.tsx                       | The root of our app. Contains setup to enable react-native-screens, initialize Sentry, enable LayoutAnimation for Android, instantiate our Mirage JS server. The app component renders our root error boundary, our redux store provider, our portal provider and our root navigator.                                                           |
 
 ### ./**\_\_tests\_\_**
 
-(Default contents; as per official template)
+(Default contents; as per official HelloWorld)
 
 ### ./**android**
 
@@ -33,10 +33,10 @@ In addition to configuring many libraries, this template also includes some boil
 
 ### ./**e2e**
 
-| File                          | Description                                                      |
-| :---------------------------- | :--------------------------------------------------------------- |
-| config.json<br>environment.js | Added for Detox integration.                                     |
-| firstTest.e2e.js              | Smoke test for template to confirm detox integration is working. |
+| File                          | Description                                                        |
+| :---------------------------- | :----------------------------------------------------------------- |
+| config.json<br>environment.js | Added for Detox integration.                                       |
+| firstTest.e2e.js              | Smoke test for HelloWorld to confirm detox integration is working. |
 
 ### ./**fastlane**
 
@@ -44,14 +44,14 @@ In addition to configuring many libraries, this template also includes some boil
 | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | .env       | Fastlane environment variables.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 | Fastfile   | Fastlane automation configuration.<br><br>1- Automated deployment to App Center.<br>2- Automated versioning and icon badge generation.<br><br>If you are not familiar at all with fastlane, I recommend these 2 posts by me:<br><br>1- [React Native, fastlane and Visual Studio App Center](https://github.com/osamaq/reactnative-fastlane-appcenter).<br>2- [Automatic Versioning for React Native Apps](https://osamaq.com/automatic-versioning-for-react-native-apps/).<br><br>You can also read through the README.md file generated by fastlane after every run. It contains a list of the available commands. |
-| Pluginfile | List of dependencies (plugins) required by our Fastlane setup. Imported by the [main Gemfile](https://github.com/osamaq/react-native-template/blob/master/template/Gemfile).                                                                                                                                                                                                                                                                                                                                                                                                                                         |
+| Pluginfile | List of dependencies (plugins) required by our Fastlane setup. Imported by the [main Gemfile](https://github.com/osamaq/react-native-HelloWorld/blob/master/HelloWorld/Gemfile).                                                                                                                                                                                                                                                                                                                                                                                                                                     |
 
 ### ./**ios**
 
-| File                        | Description                                                                                                                                       |
-| --------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------ |
-| AppDelegate.m<br>info.plist | Modified for react-native-bootsplash integration.                                                                                                 |
-| BootSplash.storyboard       | Added for react-native-bootsplash integration.                                                                                                    |
+| File                        | Description                                                                                                                                                    |
+| --------------------------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| AppDelegate.m<br>info.plist | Modified for react-native-bootsplash integration.                                                                                                              |
+| BootSplash.storyboard       | Added for react-native-bootsplash integration.                                                                                                                 |
 | (project schemes)           | Added `STAGING` and `PRODUCTION` schemes and modified the main scheme `${APP_NAME}`. Modified pre-actions for all schemes for react-native-config integration. |
 
 ### ./**scripts**
@@ -63,10 +63,10 @@ In addition to configuring many libraries, this template also includes some boil
 
 ### ./src/common/**assets**
 
-| File   | Description                                                                                                                                                                                                                                                                                                                             |
-| ------ | :-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| fonts  | Example font files. Unlinked by default. <br>To link and use them in your app, see [linking fonts](https://github.com/osamaq/react-native-template/blob/master/template/src/common/assets/fonts/how-to-add-fonts.md). |
-| images | Sample image file and sample `index.js` file generated by `generate-image-imports` npm script.                                                                                                                                                                                                                                          |
+| File   | Description                                                                                                                                                                                                               |
+| ------ | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| fonts  | Example font files. Unlinked by default. <br>To link and use them in your app, see [linking fonts](https://github.com/osamaq/react-native-HelloWorld/blob/master/HelloWorld/src/common/assets/fonts/how-to-add-fonts.md). |
+| images | Sample image file and sample `index.js` file generated by `generate-image-imports` npm script.                                                                                                                            |
 
 ### ./src/common/**components**
 
@@ -137,9 +137,9 @@ In addition to configuring many libraries, this template also includes some boil
 
 ### ./src/features/**landing**
 
-| File        | Description                                                                                               |
-| ----------- | :-------------------------------------------------------------------------------------------------------- |
-| Landing.tsx | Template landing screen. Slightly modified from the official template. Has a button to go to Landing.tsx. |
+| File        | Description                                                                                                   |
+| ----------- | :------------------------------------------------------------------------------------------------------------ |
+| Landing.tsx | HelloWorld landing screen. Slightly modified from the official HelloWorld. Has a button to go to Landing.tsx. |
 
 ### ./src/features/**navigation**
 

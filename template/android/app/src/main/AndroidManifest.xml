@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.template">
+  package="com.HelloWorld">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -23,18 +23,18 @@
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-            <!-- Accepts URIs that begin with "http://www.example.com.template” -->
+            <!-- Accepts URIs that begin with "http://www.example.com.HelloWorld” -->
             <data android:scheme="http"
                   android:host="www.example.com"
-                  android:pathPrefix="/template" />
+                  android:pathPrefix="/HelloWorld" />
             <!-- note that the leading "/" is required for pathPrefix-->
         </intent-filter>
         <intent-filter>
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-            <!-- Accepts URIs that begin with "template://” -->
-            <data android:scheme="template" />
+            <!-- Accepts URIs that begin with "HelloWorld://” -->
+            <data android:scheme="HelloWorld" />
         </intent-filter>
       </activity>
        <activity

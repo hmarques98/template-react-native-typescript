@@ -1,4 +1,4 @@
-package com.template;
+package com.HelloWorld;
 
 import android.os.Bundle; // <- add this necessary import
 import com.facebook.react.ReactActivity;
@@ -13,7 +13,7 @@ public class MainActivity extends ReactActivity {
 
   @Override
   protected String getMainComponentName() {
-    return "template";
+    return "HelloWorld";
   }
 
   @Override

@@ -17,7 +17,7 @@ const CustomWebView = () => {
 
   const source = {
     uri: params?.url || 'https://reactnative.dev',
-    title: params?.title || 'React Native template',
+    title: params?.title || 'React Native HelloWorld',
   };
 
   return (

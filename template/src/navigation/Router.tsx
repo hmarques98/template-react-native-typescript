@@ -22,7 +22,7 @@ type ParamList = CommonStackParamList & UserStackParamList & AuthStackParamList;
 export const Stack = createStackNavigator<ParamList>();
 
 const linking: LinkingOptions = {
-  prefixes: ['template://'],
+  prefixes: ['HelloWorld://'],
   config: {
     screens: {},
   },
