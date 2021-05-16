@@ -63,6 +63,7 @@ buck-out/
 
 # CocoaPods
 template/ios/Pods/
+template/ios/Podfile.lock
 template/android/build/
 
 .DS_Store
