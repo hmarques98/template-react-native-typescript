@@ -1,7 +1,7 @@
+import '@testing-library/jest-native/extend-expect';
 import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
-import React from 'react';
-import '@testing-library/jest-native/extend-expect';
+
 import { jest } from '@jest/globals';
 import { server } from './src/test/mocks/server';
 

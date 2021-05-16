@@ -1,6 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { Text, TextProps } from 'react-native';
-import styled, { css } from 'styled-components/native';
+import styled, { css, withTheme } from 'styled-components/native';
 import { space, SpaceProps, layout, LayoutProps, compose, typography, TypographyProps } from 'styled-system';
 
 interface StyleProps extends SpaceProps, TypographyProps, LayoutProps, TextProps {
@@ -21,9 +21,8 @@ const Container = styled(Text)<StyleProps>`
           border: 1px solid red;
         `
       : css``};
-  text-align-vertical: center;
   text-decoration-line: ${({ underline }) => (underline ? 'underline' : 'none')};
-  color: ${({ theme }) => theme.colors.primary};
+  color: ${(props) => props.theme.colors.primary};
   ${({ capitalize }) =>
     capitalize
       ? css`
@@ -41,7 +40,7 @@ Container.defaultProps = {
   opacity: 1,
 };
 
-const CustomText = ({ children, color, ...props }: PropsWithChildren<StyleProps>) => {
+const CustomText = ({ children, ...props }: PropsWithChildren<StyleProps>) => {
   return <Container {...props}>{children}</Container>;
 };
 
