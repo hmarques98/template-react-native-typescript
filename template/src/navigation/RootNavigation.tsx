@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { createRef, MutableRefObject, useEffect } from 'react';
 import { CommonActions, NavigationContainerRef } from '@react-navigation/native';
 import { warn } from '@utils/console';

@@ -8,7 +8,13 @@ module.exports = {
 
     'prettier/@typescript-eslint',
   ],
-  plugins: ['jest', 'detox', '@typescript-eslint', 'react-native', 'eslint-plugin-react-hooks'],
+  plugins: [
+    'jest',
+    'detox',
+    '@typescript-eslint',
+    'react-native',
+    'eslint-plugin-react-hooks',
+  ],
 
   rules: {
     // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
@@ -26,6 +32,7 @@ module.exports = {
     '@typescript-eslint/no-empty-function': 0,
     '@typescript-eslint/ban-ts-ignore': 0,
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
+    '@typescript-eslint/explicit-module-boundary-types': 0,
   },
   settings: {
     react: {

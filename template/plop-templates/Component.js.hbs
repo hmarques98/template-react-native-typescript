@@ -1,0 +1,56 @@
+import React from 'react';
+import styled, { DefaultTheme } from 'styled-components/native';
+import {
+  LayoutProps,
+  layout,
+  compose,
+  ColorProps,
+  color,
+  space,
+  SpaceProps,
+  BordersProps,
+  borders,
+  variant,
+  FlexProps,
+  flex,
+  flexbox,
+  FlexboxProps,
+  position,
+  PositionProps,
+} from 'styled-system';
+
+type VariantTypes = 'primary' | 'secondary';
+
+interface {{pascalCase name}}Props
+  extends LayoutProps,
+    ColorProps,
+    SpaceProps,
+    BordersProps,
+    FlexProps,
+    PositionProps,
+    FlexboxProps {
+  children?: React.ReactNode;
+  bgVariant?: VariantTypes;
+}
+
+const variantStyle = (theme: DefaultTheme) => {
+  return variant<{{pascalCase name}}Props, VariantTypes, 'bgVariant'>({
+    key: '{{lowerCase name}}',
+    prop: 'bgVariant',
+    variants: {
+      primary: {
+        backgroundColor: theme.colors.primary,
+      },
+      secondary: {
+        backgroundColor: theme.colors.secondary,
+      },
+    },
+  });
+};
+
+const {{pascalCase name}} = styled.View<{{pascalCase name}}Props>`
+  ${compose(color, layout, space, borders, flex, position, flexbox)}
+  ${({ theme }) => variantStyle(theme)}
+`;
+
+export default {{pascalCase name}};

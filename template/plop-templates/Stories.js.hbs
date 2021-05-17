@@ -1,0 +1,16 @@
+import React from 'react';
+import { storiesOf } from '@storybook/react-native';
+import Box from '../Box/Box';
+import {{pascalCase name}} from './{{pascalCase name}}';
+
+storiesOf('{{pascalCase name}}', module)
+  .add('Background Color', () => (
+    <{{pascalCase name}} bgVariant="primary" width={'100%'} height={100} />
+  ))
+  .add('Bordered', () => {
+    return (
+      <Box>
+          <{{pascalCase name}} bg="blue" size={50} />
+      </Box>
+    );
+  });

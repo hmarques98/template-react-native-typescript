@@ -1,2 +1,4 @@
-import './LanguageButton/stories';
-import './LanguageButton copy/stories';
+/* PLOP_INJECT_IMPORT */
+import './molecules/Button/stories';
+import './molecules/Box/stories';
+import './molecules/Typography/stories';

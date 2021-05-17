@@ -1,8 +1,8 @@
 // DEFAULT
-export const PRIMARY = '#1779ba';
-export const SECONDARY = '#767676';
-export const WHITE = '#FAFAFF';
-export const BLACK = '#30343F';
+export const PRIMARY = '#383D41';
+export const SECONDARY = '#FFE300';
+export const WHITE = '#F5F5F5';
+export const BLACK = '#1B1F23';
 
 // ACTIONS
 export const SUCCESS = '#3adb76';

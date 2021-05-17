@@ -1,23 +1,16 @@
 import HomeScreen from 'screens/Home';
-import CustomWebView from 'screens/CustomWebView';
-import NetworkError from 'screens/NetworkError';
+import CustomWebView from 'screens/CharacterDetail';
+import { StackNavigationOptions } from '@react-navigation/stack';
+import { IPeople } from 'src/interfaces/IPeople';
 
-export type UserStackParamList = {
+export type CommonStackParamList = {
+  CharacterDetail: { character: IPeople };
   Home: undefined;
 };
 
-export type CommonStackParamList = {
-  WebView: { url: string; title: string };
-  NetworkError: undefined;
-};
-
-const options = { gestureEnabled: false };
+const options: StackNavigationOptions = { gestureEnabled: false };
 
 export const commonScreens = {
-  NetworkError: { component: NetworkError, options },
-  WebView: { component: CustomWebView },
-};
-
-export const userScreens = {
-  Home: { component: HomeScreen },
+  Home: { component: HomeScreen, options },
+  CharacterDetail: { component: CustomWebView },
 };

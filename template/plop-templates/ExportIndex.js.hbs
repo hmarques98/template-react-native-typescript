@@ -1,0 +1,1 @@
+export { default as {{pascalCase name}} } from './{{pascalCase name}}';
