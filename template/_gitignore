@@ -33,6 +33,7 @@ local.properties
 #
 .vscode/
 .env
+.env.prod
 
 # node.js
 #

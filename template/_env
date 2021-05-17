@@ -1,3 +1,0 @@
-ENV=dev
-SENTRY_DSN=
-BASE_URL=https://fakerapi.it/api/v1/

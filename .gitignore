@@ -20,6 +20,7 @@ template/DerivedData
 template/*.hmap
 template/*.ipa
 template/*.xcuserstate
+template/Pods/
 
 # Android/IntelliJ
 #
@@ -66,6 +67,3 @@ template/ios/Podfile.lock
 template/android/build/
 
 .DS_Store
-
-template/.env
-template/.env.prod
