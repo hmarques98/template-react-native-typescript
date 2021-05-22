@@ -1,6 +1,6 @@
 {
   "name": "@hmarques98/react-native-template-typescript",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "A minimal template with good architecture and common packages to let you focus on writing features right away.",
   "scripts": {
     "publish": ""
