@@ -1,8 +1,8 @@
 # react-native-template
 
-[![Build Status](https://travis-ci.com/osamaq/react-native-template.svg?branch=master)](https://travis-ci.com/hmarques98/react-native-template-typescript)
-[![npm downloads](https://img.shields.io/npm/dt/@hmarques98/react-native-template.svg)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
-[![npm version](https://img.shields.io/npm/v/@hmarques98/react-native-template?color=44BC1C)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
+[![Build Status](https://travis-ci.com/osamaq/react-native-template.svg?branch=master)](https://travis-ci.com/hmarques98/template-react-native-typescript)
+[![npm downloads](https://img.shields.io/npm/dt/@hmarques98/react-native-template.svg)](https://www.npmjs.com/package/@hmarques98/template-react-native-typescript)
+[![npm version](https://img.shields.io/npm/v/@hmarques98/react-native-template?color=44BC1C)](https://www.npmjs.com/package/@hmarques98/template-react-native-typescript)
 
 <p align="center" >
   <img
