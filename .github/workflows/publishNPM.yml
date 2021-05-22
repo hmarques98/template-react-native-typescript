@@ -10,7 +10,7 @@ jobs:
           node-version: 10
       - uses: phips28/gh-action-bump-version@master
         env:
-          PACKAGEJSON_DIR: './package.json'
+          PACKAGEJSON_DIR: 'template-react-native-typescript'
 
       - run: npm install
       - run: npm test
