@@ -14,7 +14,4 @@ jobs:
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./package.json
-      - name: 'Automated Version Bump'
-      - uses: 'phips28/gh-action-bump-version@master'
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: maks-stupak/gh-action-bump-version@v7.1.5
