@@ -10,7 +10,7 @@ jobs:
           node-version: 10
       - name: Automated Version Bump
         id: version-bump
-      - uses: phips28/gh-action-bump-version@master
+        uses: phips28/gh-action-bump-version@master
         with:
           commit-message: 'CI: package.json version auto updated to {{version}}'
         env:
