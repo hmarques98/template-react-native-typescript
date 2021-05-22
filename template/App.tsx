@@ -10,7 +10,6 @@ import * as Sentry from '@sentry/react-native';
 import codePush, { CodePushOptions } from 'react-native-code-push';
 import useNetworkError from 'hooks/useNetworkError';
 import useStartupTime from 'hooks/useStartupTime';
-// import useNotifications from 'hooks/useNotifications';
 import useAppState from 'react-native-appstate-hook';
 import { Provider } from 'react-redux';
 import store from './src/store';
@@ -32,8 +31,6 @@ if (typeof SENTRY_DSN === 'string' && SENTRY_DSN.length > 0) {
 const queryClient = new QueryClient();
 
 const App = () => {
-  // useNotifications();
-
   useNavigationMounting();
 
   useStartupTime();
@@ -41,7 +38,8 @@ const App = () => {
   useNetworkError();
 
   useAppState({
-    onChange: (newAppState) => console.warn('App state changed to ', newAppState),
+    onChange: (newAppState) =>
+      console.warn('App state changed to ', newAppState),
     onForeground: () => console.warn('App went to Foreground'),
     onBackground: () => console.warn('App went to background'),
   });

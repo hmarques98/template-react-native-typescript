@@ -328,8 +328,6 @@ root
     └── hooks
     |   └── useCustomBackBehaviour.tsx
     |   └── useNetworkError.tsx
-    |   └── useNotification.tsx
-    |   └── usePrevious.tsx
     |   └── useStartupTime.tsx
     |   └── useReactQuery.tsx
     └── localization

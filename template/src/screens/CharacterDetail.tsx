@@ -1,8 +1,7 @@
 import React, { Suspense } from 'react';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-import CustomText from 'components/CustomText';
+
 import { CommonStackParamList } from 'screens';
-import CustomScreen from 'components/CustomScreen';
 import { Box } from 'components/molecules/Box';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { PADDING } from 'styles/spacing';

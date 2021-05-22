@@ -1,6 +1,9 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 import { createRef, MutableRefObject, useEffect } from 'react';
-import { CommonActions, NavigationContainerRef } from '@react-navigation/native';
+import {
+  CommonActions,
+  NavigationContainerRef,
+} from '@react-navigation/native';
 import { warn } from '@utils/console';
 
 export const isMountedRef = createRef<boolean>();
@@ -17,10 +20,11 @@ export function useNavigationMounting() {
   }, []);
 }
 
-export function navigate(name: string, params?: object) {
+export function navigate<T>(name: string, params?: T) {
   if (isMountedRef.current && navigationRef.current) {
     // Perform navigation if the app has mounted
-    navigationRef.current.navigate(name, params);
+
+    navigationRef.current.navigate(name, params as unknown as object);
   } else {
     warn('Navigation not mounted. Cannot navigate to:', name);
     // You can decide what to do if the app hasn't mounted

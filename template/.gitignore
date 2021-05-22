@@ -38,6 +38,7 @@ local.properties
 node_modules/
 npm-debug.log
 yarn-error.log
+yarn.lock
 
 # BUCK
 buck-out/
@@ -62,3 +63,11 @@ buck-out/
 # CocoaPods
 /ios/Pods/
 /ios/Podfile.lock
+java_pid*
+
+/ios/sentry.properties
+/android/sentry.properties
+
+# GEM
+
+Gemfile.lock

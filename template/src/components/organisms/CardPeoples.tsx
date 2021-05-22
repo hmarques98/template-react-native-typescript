@@ -3,7 +3,6 @@ import { WINDOW_DEVICE_WIDTH } from '@utils/constants';
 import { Box } from 'components/molecules/Box';
 import { Button } from 'components/molecules/Button';
 import { Typography } from 'components/molecules/Typography';
-import useReactQuery from 'hooks/useReactQuery';
 import React, { useEffect } from 'react';
 import { IPeople } from 'src/interfaces/IPeople';
 import { myTheme } from 'theme';

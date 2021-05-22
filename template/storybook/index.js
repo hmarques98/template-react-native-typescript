@@ -1,5 +1,9 @@
 import React from 'react';
-import { getStorybookUI, configure, addDecorator } from '@storybook/react-native';
+import {
+  getStorybookUI,
+  configure,
+  addDecorator,
+} from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../theme';
@@ -8,7 +12,9 @@ import { myTheme } from '../theme';
 const getStorybookUIRoot = () => {
   require('./rn-addons');
   addDecorator(withKnobs);
-  addDecorator((storyFn) => <ThemeProvider theme={myTheme}>{storyFn()}</ThemeProvider>);
+  addDecorator((storyFn) => (
+    <ThemeProvider theme={myTheme}>{storyFn()}</ThemeProvider>
+  ));
 
   configure(() => {
     require('../src/components/stories');
@@ -16,7 +22,7 @@ const getStorybookUIRoot = () => {
   return getStorybookUI({
     asyncStorage:
       // eslint-disable-next-line @typescript-eslint/no-var-requires
-      require('@react-native-async-storage/async-storage').default || require('react-native').AsyncStorage || null,
+      require('@react-native-async-storage/async-storage').default || null,
   });
 };
 
