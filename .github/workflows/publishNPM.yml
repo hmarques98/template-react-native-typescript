@@ -8,12 +8,12 @@ jobs:
       - uses: actions/setup-node@v1
         with:
           node-version: 10
+      - uses: maks-stupak/gh-action-bump-version@v7.1.5
+        env:
+          PACKAGEJSON_DIR: '../../package.json'
       - run: npm install
       - run: npm test
       - uses: JS-DevTools/npm-publish@v1
         with:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./package.json
-      - uses: maks-stupak/gh-action-bump-version@v7.1.5
-        env:
-          PACKAGEJSON_DIR: './package.json'
