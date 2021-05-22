@@ -1,18 +1,18 @@
 import '@testing-library/jest-native/extend-expect';
+
 import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
 
 import { jest } from '@jest/globals';
-import { server } from './src/test/mocks/server';
 
 jest.mock('@react-native-community/netinfo', () => mockRNCNetInfo);
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
 
-jest.mock('@sentry/react-native', () => ({
+jest.doMock('@sentry/react-native', () => ({
   init: jest.fn(),
 }));
 
-jest.mock('react-native-reanimated', () => {
+jest.doMock('react-native-reanimated', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const Reanimated = require('react-native-reanimated/mock');
 
@@ -24,7 +24,7 @@ jest.mock('react-native-reanimated', () => {
 });
 
 // Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
+jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
 
 jest.mock('nanoid/non-secure', () => ({
   nanoid: () => 'routeUniqId',
@@ -42,7 +42,6 @@ jest.mock('react-native/Libraries/Components/Switch/Switch', () => {
   return mockComponent('react-native/Libraries/Components/Switch/Switch');
 });
 
-jest.mock('react-native/Libraries/Animated/src/NativeAnimatedHelper');
 jest.mock('react-native-gesture-handler', () => {
   // eslint-disable-next-line @typescript-eslint/no-var-requires
   const View = require('react-native/Libraries/Components/View/View');
@@ -78,9 +77,6 @@ jest.mock('react-native-gesture-handler', () => {
   };
 });
 
-//establish api mocking before all tests
-beforeAll(() => server.listen());
-
 beforeEach(() => {
   global.fetch = jest.fn((...args) => {
     console.warn('global.fetch needs to be mocked in tests', ...args);
@@ -89,11 +85,9 @@ beforeEach(() => {
 });
 
 //clean up after the tests are finished
-afterAll(() => server.close());
 
 afterEach(() => {
   global.fetch.mockRestore();
   //reset any requests handlers that we may add during the tests,
   //so they don't affect other tests.
-  server.resetHandlers();
 });
