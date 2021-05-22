@@ -1,5 +1,9 @@
 name: Publish and increment to NPM
-on: [push]
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - template/*
 jobs:
   publish:
     runs-on: ubuntu-latest
