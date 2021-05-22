@@ -15,3 +15,5 @@ jobs:
           token: ${{ secrets.NPM_TOKEN }}
           package: ./package.json
       - uses: maks-stupak/gh-action-bump-version@v7.1.5
+        env:
+          PACKAGEJSON_DIR: './package.json'
