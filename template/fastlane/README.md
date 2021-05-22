@@ -44,6 +44,11 @@ Build, deploy production Android.
 fastlane android bump_badge_deploy_staging
 ```
 Bump, badge, deploy staging Android.
+### android bump_badge_build_staging
+```
+fastlane android bump_badge_build_staging
+```
+Bump, badge, build staging Android.
 ### android bump_badge_deploy_prod
 ```
 fastlane android bump_badge_deploy_prod

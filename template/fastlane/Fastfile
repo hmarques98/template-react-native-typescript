@@ -8,9 +8,13 @@ platform :android do
   desc 'Build the staging release APK.'
   private_lane :build_staging do
     gradle(task: 'clean', project_dir: 'android/')
-    sh("npm", "run", "make-apk:stagingRelease")
+    gradle(
+      project_dir: "android/",
+      task: "assemble",
+      build_type: "Release"
+    )
   end
-
+  
   desc 'Build the production release APK.'
   private_lane :build_production do
     gradle(task: 'clean', project_dir: 'android/')
@@ -47,6 +51,12 @@ platform :android do
   lane :bump_badge_deploy_staging do
     bump_badge
     deploy_staging
+  end
+
+  desc 'Bump, badge, build staging Android.'
+  lane :bump_badge_build_staging do
+    bump_badge
+    build_staging
   end
   
   desc 'Bump, badge, deploy production Android.'
