@@ -10,7 +10,8 @@ jobs:
           node-version: 10
       - uses: maks-stupak/gh-action-bump-version@v7.1.5
         env:
-          PACKAGEJSON_DIR: '../../package.json'
+          PACKAGEJSON_DIR: './package.json'
+
       - run: npm install
       - run: npm test
       - uses: JS-DevTools/npm-publish@v1
