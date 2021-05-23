@@ -24,6 +24,10 @@ target 'HelloWorld' do
     # Pods for testing
   end
 
+  target 'OneSignalNotificationServiceExtension' do
+    pod 'OneSignal', '>= 3.0', '< 4.0'
+  end
+
   # Enables Flipper.
   #
   # Note that if you have use_frameworks! enabled, Flipper will not work and

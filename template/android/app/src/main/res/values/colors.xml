@@ -1,3 +1,4 @@
 <resources>
     <color name="bootsplash_background">#FFFFFF</color>
+    <color name="colorAccent">#C60C30</color>
 </resources>

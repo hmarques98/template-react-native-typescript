@@ -6,8 +6,11 @@ import { ENV } from '@env';
 
 export type RootState = ReturnType<typeof store.getState>;
 log({ ENV });
+
 const middlewares: any[] = [];
+
 const dev = ENV === 'dev';
+
 if (dev) {
   const createDebugger = require('redux-flipper').default;
   middlewares.push(createDebugger());
@@ -15,7 +18,8 @@ if (dev) {
 const store = configureStore({
   reducer: rootReducer,
   devTools: dev,
-  middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(middlewares),
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(middlewares),
 });
 
 export type AppDispatch = typeof store.dispatch;
