@@ -121,9 +121,25 @@ You must be a member of the Apple Developer Program in order to enable Push Noti
 
 ![Instructions to add push notifications capability](https://i.stack.imgur.com/qsQTx.jpg)
 
-#### Customize notification appearance on Android
+### Setup OneSignal
 
-Starting Android 10 (API 29), notification icons should be glyphs. You need to follow this step to [customize the notification appearance](https://wix.github.io/react-native-notifications/docs/installation-android/#step-6-customize-the-appearance).
+1. You will need to have [OneSignal Account](https://app.onesignal.com/signup)
+2. Your OneSignal App ID, available in [Keys & IDs
+   iOS.](https://documentation.onesignal.com/docs/accounts-and-keys#section-app-id)
+
+3. IOS - [Generate an iOS Push Certificate.](https://documentation.onesignal.com/docs/generate-an-ios-push-certificate) You should generate a certificate after adding the Push Notification capability while setting up your iOS app.
+4. Android - [Generate a Google Firebase Server API Key](https://documentation.onesignal.com/docs/generate-a-google-server-api-key)
+5. Optional step for your application to use [Confirmed Deliveries](https://documentation.onesignal.com/docs/confirmed-deliveries) and and increment/decrement [Badges](https://documentation.onesignal.com/docs/badges) through push notifications, you need to set up an App Group for your application.
+
+In your main app target go back to Signing & Capabilities > All > + Capability and add App Groups
+
+![Instructions to add push notifications capability](https://files.readme.io/5b72690-Screen_Shot_2020-08-15_at_6.10.59_PM.png)
+
+![Instructions to add push notifications capability](https://files.readme.io/2f271ce-Screen_Shot_2020-08-15_at_6.15.25_PM.png)
+
+![Instructions to add push notifications capability](https://files.readme.io/230100f-c51bffb-Screen_Shot_2020-08-15_at_6.21.25_PM.png)
+
+For more instructions and doubts, go to [Documentation Integration](https://documentation.onesignal.com/docs/react-native-sdk-setup#step-4-install-for-ios-using-cocoapods-for-ios-apps)
 
 ### Setup Code Push
 
@@ -136,10 +152,6 @@ Starting Android 10 (API 29), notification icons should be glyphs. You need to f
 1. Copy and Replace the CodePushDeploymentKey in android/app/build.gradle and XCode -> YourProject -> Build Settings -> `CODE_PUSH_KEY`
 
 You can retrieve this values by running `appcenter codepush deployment list -a <ownerName>/<appName> -k`
-
-#### Add project email for the FileLogger
-
-Update project email used by `sendLoggedFiles` method in `Home.tsx`
 
 ## Libraries
 
@@ -192,6 +204,10 @@ A unified permissions API for React Native on iOS and Android. For iOS you have 
 ### react-i18next
 
 Localization using hooks. [React Native example](https://github.com/i18next/react-i18next/tree/master/example/react-native)
+
+### OneSignal
+
+OneSignal is the fastest and most reliable service to send push notifications, in-app messages, and emails to your users on mobile
 
 ### Codepush
 
@@ -250,6 +266,12 @@ NPM scripts for running the app with the desired configuration are [included](ht
 ### Reanimated
 
 Necessary when creating complex gesture based animations that are highly performant.
+
+### Lottie React Native
+
+Lottie is a mobile library for Android and iOS that parses Adobe After Effects animations exported as JSON with bodymovin and renders them natively on mobile!
+
+For the first time, designers can create and ship beautiful animations without an engineer painstakingly recreating it by hand.
 
 ### react-native-appstate-hook
 
