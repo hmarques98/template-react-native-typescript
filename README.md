@@ -1,8 +1,7 @@
-# react-native-template
+# react-native-template-typescript
 
-[![Build Status](https://travis-ci.com/osamaq/react-native-template.svg?branch=master)](https://travis-ci.com/hmarques98/template-react-native-typescript)
-[![npm downloads](https://img.shields.io/npm/dt/@hmarques98/react-native-template.svg)](https://www.npmjs.com/package/@hmarques98/template-react-native-typescript)
-[![npm version](https://img.shields.io/npm/v/@hmarques98/react-native-template?color=44BC1C)](https://www.npmjs.com/package/@hmarques98/template-react-native-typescript)
+[![npm downloads](https://img.shields.io/npm/dt/@hmarques98/react-native-template-typescript.svg)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
+[![npm version](https://img.shields.io/npm/v/@hmarques98/react-native-template-typescript?color=44BC1C)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
 
 <p align="center" >
   <img
@@ -204,10 +203,6 @@ The CodePush plugin helps get product improvements in front of your end users in
 
 Benefitial in debugging issues that occur only in release builds. You can view error stack traces for unhandled exceptions. You can also choose to log specific errors in some catch blocks to study how often they occur in production.
 
-In this template, there is a custom Redux [middleware](https://github.com/osamaq/react-native-template/blob/master/template/src/redux/middleware/sentryMiddleware.ts) that adds Redux actions as breadcrumbs to Sentry reports for even easier debugging.
-
-This is similar to [redux-sentry-middleware](https://github.com/vidit-sh/redux-sentry-middleware) but I've yet to test that one.
-
 ### react-native-bootsplash
 
 Works great for controlling your splash screen.
@@ -252,9 +247,9 @@ iOS: two additional schemes are created in the Xcode project for staging and pro
 
 NPM scripts for running the app with the desired configuration are [included](https://github.com/osamaq/react-native-template/blob/acc4f4ab117bee099a531ad44be1130f9d24df69/template/package.json#L11) for convenience.
 
-### Reanimated/Redash
+### Reanimated
 
-Necessary when creating complex gesture based animations that are highly performant. Redash contains boilerplate helpers for Reanimated.
+Necessary when creating complex gesture based animations that are highly performant.
 
 ### react-native-appstate-hook
 
