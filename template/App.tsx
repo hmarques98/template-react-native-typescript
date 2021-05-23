@@ -25,8 +25,16 @@ FileLogger.configure({
 log({ ENV, SENTRY_DSN, ONESIGNAL_ANDROID_KEY });
 
 if (typeof SENTRY_DSN === 'string' && SENTRY_DSN.length > 0) {
+  const routingInstrumentation = new Sentry.ReactNavigationV5Instrumentation();
+
   Sentry.init({
     dsn: SENTRY_DSN,
+    integrations: [
+      new Sentry.ReactNativeTracing({
+        routingInstrumentation,
+        // ... other options
+      }),
+    ],
   });
 }
 const queryClient = new QueryClient();

@@ -143,8 +143,8 @@ const HomeScreen = () => {
               <LottieView
                 source={require('../../assets/spinner.json')}
                 autoPlay
-                hardwareAccelerationAndroid
                 loop
+                hardwareAccelerationAndroid={false}
                 style={{
                   height: 60,
                   width: 60,
@@ -206,8 +206,8 @@ const HomeScreen = () => {
                     <LottieView
                       source={require('../../assets/spinner.json')}
                       autoPlay
-                      hardwareAccelerationAndroid
                       loop
+                      hardwareAccelerationAndroid={false}
                       resizeMode="contain"
                       style={{
                         height: 30,
