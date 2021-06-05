@@ -1,6 +1,7 @@
 // DEFAULT
-export const PRIMARY = '#1D1C83';
-export const SECONDARY = '#030065';
+export const PRIMARY = '#E0F2E9';
+export const SECONDARY = '#114B5F';
+export const BACKGROUND_COLOR = '#3C887E';
 export const WHITE = '#F9F7FE';
 export const BLACK = '#1B1F23';
 

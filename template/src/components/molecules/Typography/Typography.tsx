@@ -37,10 +37,10 @@ const variantStyle = (theme: DefaultTheme) => {
     prop: 'variant',
     variants: {
       regular: {
-        fontFamily: 'heading',
+        fontFamily: 'body',
       },
       bold: {
-        fontFamily: 'body',
+        fontFamily: 'heading',
       },
     },
   });

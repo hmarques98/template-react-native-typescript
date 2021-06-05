@@ -1,15 +1,12 @@
-import React, { Suspense } from 'react';
+import React from 'react';
 import { RouteProp, useNavigation, useRoute } from '@react-navigation/native';
-
 import { CommonStackParamList } from 'screens';
 import { Box } from 'components/molecules/Box';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { PADDING } from 'styles/spacing';
 import { StatusBar, StyleSheet } from 'react-native';
 import { theme } from 'theme';
 import { Typography } from 'components/molecules/Typography';
 import UserAvatar from 'react-native-user-avatar';
-import { FONT_SIZE_16 } from 'styles/typography';
 import { Button } from 'components/molecules/Button';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { WINDOW_DEVICE_WIDTH } from '@utils/constants';
@@ -35,16 +32,16 @@ const CharacterDetailScreen = () => {
           {name}
         </Typography>
         <Box my={'md'}>
-          <Typography variant="bold" color={'white'} fontSize={FONT_SIZE_16}>
+          <Typography variant="bold" color={'white'} fontSize="ls">
             Gender - {restProperties.gender}
           </Typography>
-          <Typography variant="bold" color={'white'} fontSize={FONT_SIZE_16}>
+          <Typography variant="bold" color={'white'} fontSize="ls">
             Hair color - {restProperties.hair_color}
           </Typography>
-          <Typography variant="bold" color={'white'} fontSize={FONT_SIZE_16}>
+          <Typography variant="bold" color={'white'} fontSize="ls">
             Eye color - {restProperties.eye_color}
           </Typography>
-          <Typography variant="bold" color={'white'} fontSize={FONT_SIZE_16}>
+          <Typography variant="bold" color={'white'} fontSize="ls">
             Skin color - {restProperties.skin_color}
           </Typography>
         </Box>
@@ -74,7 +71,7 @@ export default CharacterDetailScreen;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: theme.colors.black,
+    backgroundColor: theme.colors.backgroundColor,
   },
 });
 

@@ -4,7 +4,6 @@ import { Button } from 'components/molecules/Button';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { FONT_SIZE_16 } from 'styles/typography';
 
 import { theme } from 'theme';
 
@@ -127,7 +126,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
       <Box flex={1} alignItems="center" paddingTop={'sm'}>
-        <Typography color={'secondary'} fontSize={FONT_SIZE_16} variant="bold">
+        <Typography color={'primary'} fontSize={'xl'} variant="bold">
           STAR WARS API
         </Typography>
         <Box
@@ -147,10 +146,7 @@ const HomeScreen = () => {
                   width: 60,
                 }}
               />
-              <Typography
-                variant="bold"
-                fontSize={FONT_SIZE_16}
-                color={'white'}>
+              <Typography variant="bold" fontSize={'ls'} color={'white'}>
                 We are finding information about
               </Typography>
             </Box>
@@ -226,6 +222,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: theme.colors.black,
+    backgroundColor: theme.colors.backgroundColor,
   },
 });

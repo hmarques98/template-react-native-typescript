@@ -20,9 +20,9 @@ const CardPeoples = ({ name, homeworld, onPress }: CardPeopleProps) => {
         variant="rounded"
         height={80}
         onPress={onPress}
-        bg={theme.colors.primary}>
-        <Typography color={theme.colors.white}>{name}</Typography>
-        <Typography color={theme.colors.white}>{homeworld}</Typography>
+        bg={'primary'}>
+        <Typography color={'secondary'}>{name}</Typography>
+        <Typography color={'secondary'}>{homeworld}</Typography>
       </Button>
     </Box>
   );

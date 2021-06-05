@@ -21,6 +21,7 @@ declare module 'styled-components' {
       green: string;
       grayLight: string;
       success: string;
+      backgroundColor: string;
     };
     typography: {
       FONT_REGULAR: string;

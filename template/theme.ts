@@ -19,6 +19,7 @@ const theme: DefaultTheme = {
     green: colors.GREEN,
     grayLight: colors.GRAY_LIGHT,
     success: colors.SUCCESS,
+    backgroundColor: colors.BACKGROUND_COLOR,
   },
   typography: {
     FONT_REGULAR: typography.FONT_FAMILY_REGULAR,
@@ -53,8 +54,8 @@ const theme: DefaultTheme = {
     xxl: 64,
   },
   fonts: {
-    body: '',
-    heading: '',
+    body: 'RobotoMono-Regular',
+    heading: 'RobotoMono-Bold',
   },
 };
 
