@@ -15,16 +15,19 @@ import {
   typography,
   color,
   ColorProps,
+  FontFamilyProps,
+  fontFamily,
 } from 'styled-system';
-import { myTheme } from 'theme';
+import { theme } from 'theme';
 
 interface TypographyProps
-  extends TextStyleProps,
-    LayoutProps,
-    SpaceProps,
-    TextProps,
-    ColorProps {
+  extends TextStyleProps<typeof theme>,
+    LayoutProps<typeof theme>,
+    SpaceProps<typeof theme>,
+    TextProps<typeof theme>,
+    ColorProps<typeof theme> {
   variant?: VariantTypes;
+  fontFamily?: keyof typeof theme.fonts;
 }
 
 type VariantTypes = 'regular' | 'bold';
@@ -34,10 +37,10 @@ const variantStyle = (theme: DefaultTheme) => {
     prop: 'variant',
     variants: {
       regular: {
-        fontFamily: theme.typography.FONT_REGULAR,
+        fontFamily: 'heading',
       },
       bold: {
-        fontFamily: theme.typography.FONT_BOLD,
+        fontFamily: 'body',
       },
     },
   });
@@ -49,7 +52,7 @@ const Typography = styled(Text)<TypographyProps>`
 `;
 
 Typography.defaultProps = {
-  color: myTheme.colors.primary,
-  fontFamily: myTheme.typography.FONT_REGULAR,
+  color: 'secondary',
+  fontFamily: 'heading',
 };
 export default Typography;

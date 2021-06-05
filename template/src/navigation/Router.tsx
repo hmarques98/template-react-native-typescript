@@ -7,11 +7,11 @@ import { navigationRef } from 'navigation/RootNavigation';
 
 import { commonScreens, CommonStackParamList } from 'screens';
 import { ThemeProvider } from 'styled-components';
-import { myTheme } from '../../theme';
+import { theme } from '../../theme';
 import RNBootSplash from 'react-native-bootsplash';
 
 const screenOptions = {
-  cardStyle: { backgroundColor: myTheme.colors.white },
+  cardStyle: { backgroundColor: theme.colors.white },
   headerShown: false,
 };
 
@@ -27,7 +27,7 @@ const linking: LinkingOptions = {
 
 export default function Router() {
   return (
-    <ThemeProvider theme={myTheme}>
+    <ThemeProvider theme={theme}>
       <NavigationContainer
         linking={linking}
         ref={navigationRef}

@@ -2,7 +2,6 @@ import React from 'react';
 import { storiesOf } from '@storybook/react-native';
 import Button from './Button';
 import { Typography } from 'components/molecules/Typography';
-import { myTheme } from 'theme';
 
 storiesOf('Button', module)
   .add('Button Box', () => (
@@ -14,11 +13,8 @@ storiesOf('Button', module)
   ))
   .add('Button Outlined', () => {
     return (
-      <Button variant="outlined" bg={myTheme.colors.secondary}>
-        <Typography
-          variant="regular"
-          fontSize={16}
-          color={myTheme.colors.primary}>
+      <Button variant="outlined" bg={'secondary'}>
+        <Typography variant="regular" fontSize={16} color={'primary'}>
           Button outlined
         </Typography>
       </Button>
@@ -26,11 +22,8 @@ storiesOf('Button', module)
   })
   .add('Button Rounded', () => {
     return (
-      <Button variant="rounded" bg={myTheme.colors.primary}>
-        <Typography
-          variant="regular"
-          fontSize={16}
-          color={myTheme.colors.secondary}>
+      <Button variant="rounded" bg={'primary'}>
+        <Typography variant="regular" fontSize={16} color={'secondary'}>
           Button rounded
         </Typography>
       </Button>
@@ -39,10 +32,7 @@ storiesOf('Button', module)
   .add('Button Disable', () => {
     return (
       <Button variant="disabled" marginX={10} disabled>
-        <Typography
-          variant="regular"
-          fontSize={16}
-          color={myTheme.colors.secondary}>
+        <Typography variant="regular" fontSize={16} color={'secondary'}>
           Button disabled
         </Typography>
       </Button>

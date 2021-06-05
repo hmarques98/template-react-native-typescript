@@ -24,18 +24,19 @@ import {
   PaddingProps,
   padding,
 } from 'styled-system';
+import { theme } from 'theme';
 
 type VariantTypes = 'outlined' | 'rounded' | 'box' | 'disabled';
 
 interface ButtonProps
   extends LayoutProps,
-    ColorProps,
+    ColorProps<typeof theme>,
     SpaceProps,
     BordersProps,
     FlexProps,
     PositionProps,
     FlexboxProps,
-    ButtonStyleProps,
+    ButtonStyleProps<typeof theme>,
     PaddingProps {
   children?: React.ReactNode;
   variant?: VariantTypes;
@@ -51,16 +52,15 @@ const variantStyle = (theme: DefaultTheme, disabled: boolean) => {
         height: '100%',
       },
       outlined: {
-        borderColor: theme.colors.primary,
-        borderWidth: theme.spacing.border,
+        borderColor: 'primary',
+        borderWidth: 1,
         borderStyle: 'solid',
       },
       rounded: {
-        borderRadius: theme.spacing.borderRadius,
+        borderRadius: 8,
       },
       disabled: {
-        borderRadius: theme.spacing.borderRadius,
-        backgroundColor: theme.colors.black,
+        backgroundColor: 'black',
       },
     },
   });

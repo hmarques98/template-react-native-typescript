@@ -5,7 +5,7 @@ import { Button } from 'components/molecules/Button';
 import { Typography } from 'components/molecules/Typography';
 import React, { useEffect } from 'react';
 import { IPeople } from 'src/interfaces/IPeople';
-import { myTheme } from 'theme';
+import { theme } from 'theme';
 interface CardPeopleProps extends IPeople {
   onPress: () => void;
 }
@@ -20,9 +20,9 @@ const CardPeoples = ({ name, homeworld, onPress }: CardPeopleProps) => {
         variant="rounded"
         height={80}
         onPress={onPress}
-        bg={myTheme.colors.primary}>
-        <Typography color={myTheme.colors.white}>{name}</Typography>
-        <Typography color={myTheme.colors.white}>{homeworld}</Typography>
+        bg={theme.colors.primary}>
+        <Typography color={theme.colors.white}>{name}</Typography>
+        <Typography color={theme.colors.white}>{homeworld}</Typography>
       </Button>
     </Box>
   );

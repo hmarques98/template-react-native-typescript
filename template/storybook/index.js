@@ -6,14 +6,14 @@ import {
 } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 import { ThemeProvider } from 'styled-components';
-import { myTheme } from '../theme';
+import { theme } from '../theme';
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#start-command-parameters
 
 const getStorybookUIRoot = () => {
   require('./rn-addons');
   addDecorator(withKnobs);
   addDecorator((storyFn) => (
-    <ThemeProvider theme={myTheme}>{storyFn()}</ThemeProvider>
+    <ThemeProvider theme={theme}>{storyFn()}</ThemeProvider>
   ));
 
   configure(() => {

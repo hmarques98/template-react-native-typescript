@@ -1,21 +1,21 @@
 import React from 'react';
 import styled from 'styled-components/native';
-import CustomText from 'components/CustomText';
 import WifiOff from 'assets/wifi-off.svg';
-import CustomScreen from 'components/CustomScreen';
+import { Box } from 'components/molecules/Box';
+import { Typography } from 'components/molecules/Typography';
 
 const NetworkError = () => (
-  <CustomScreen justifyContent={'space-around'}>
+  <Box justifyContent={'space-around'}>
     <BodyContainer>
       <WifiOff />
-      <CustomText fontWeight={'700'} textAlign={'center'} mt={60} mb={20}>
+      <Typography textAlign={'center'} mt={'xx'} mb={'xs'}>
         No internet connection
-      </CustomText>
-      <CustomText fontWeight={'500'} textAlign={'center'}>
+      </Typography>
+      <Typography fontFamily="" textAlign={'center'}>
         Please check your internet connection settings and try again.
-      </CustomText>
+      </Typography>
     </BodyContainer>
-  </CustomScreen>
+  </Box>
 );
 
 const BodyContainer = styled.View`

@@ -12,7 +12,7 @@ storiesOf('Typography', module)
         height={'100%'}
         justifyContent="center"
         alignItems="center">
-        <Typography variant="regular" fontSize={40}>
+        <Typography variant="regular" fontSize="xl">
           Typography Regular
         </Typography>
       </Box>
@@ -28,7 +28,7 @@ storiesOf('Typography', module)
           height={'100%'}
           justifyContent="center"
           alignItems="center">
-          <Typography variant="bold" fontSize={40}>
+          <Typography variant="bold" fontSize="xl" fontFamily="body">
             Typography Bold
           </Typography>
         </Box>

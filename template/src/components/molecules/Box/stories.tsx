@@ -12,11 +12,11 @@ storiesOf('Box', module)
         <Box
           bgVariant="secondary"
           size={100}
-          borderRadius={16}
+          borderRadius="ls"
           justifyContent="center"
           alignItems="center"
           alignSelf="center">
-          <Box bg="blue" size={50} />
+          <Box bg={'grayLight'} size={50} />
         </Box>
       </Box>
     );

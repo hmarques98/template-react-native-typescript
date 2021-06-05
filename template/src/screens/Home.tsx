@@ -5,8 +5,8 @@ import React, { useCallback, useEffect, useRef } from 'react';
 import { StyleSheet, StatusBar } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { FONT_SIZE_16 } from 'styles/typography';
-import { MARGIN, PADDING } from 'styles/spacing';
-import { myTheme } from 'theme';
+
+import { theme } from 'theme';
 
 import { IPeople } from 'src/interfaces/IPeople';
 import { FlatList } from 'react-native-gesture-handler';
@@ -126,15 +126,12 @@ const HomeScreen = () => {
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
-      <Box flex={1} alignItems="center" paddingTop={PADDING}>
-        <Typography
-          color={myTheme.colors.secondary}
-          fontSize={FONT_SIZE_16}
-          variant="bold">
+      <Box flex={1} alignItems="center" paddingTop={'sm'}>
+        <Typography color={'secondary'} fontSize={FONT_SIZE_16} variant="bold">
           STAR WARS API
         </Typography>
         <Box
-          mt={`${MARGIN * 2}px`}
+          mt={'md'}
           alignItems="center"
           justifyContent={isLoading ? 'center' : 'flex-start'}
           flex={1}>
@@ -153,7 +150,7 @@ const HomeScreen = () => {
               <Typography
                 variant="bold"
                 fontSize={FONT_SIZE_16}
-                color={myTheme.colors.white}>
+                color={'white'}>
                 We are finding information about
               </Typography>
             </Box>
@@ -196,11 +193,7 @@ const HomeScreen = () => {
                   my={3}
                   flexDirection="row"
                   width={WINDOW_DEVICE_WIDTH * 0.8}
-                  backgroundColor={
-                    !hasNextPage
-                      ? myTheme.colors.secondary
-                      : myTheme.colors.primary
-                  }
+                  backgroundColor={!hasNextPage ? 'secondary' : 'primary'}
                   disabled>
                   {isFetching ? (
                     <LottieView
@@ -215,12 +208,7 @@ const HomeScreen = () => {
                       }}
                     />
                   ) : (
-                    <Typography
-                      color={
-                        !hasNextPage
-                          ? myTheme.colors.primary
-                          : myTheme.colors.secondary
-                      }>
+                    <Typography color={!hasNextPage ? 'primary' : 'secondary'}>
                       All list is loaded
                     </Typography>
                   )}
@@ -238,6 +226,6 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
-    backgroundColor: myTheme.colors.black,
+    backgroundColor: theme.colors.black,
   },
 });
