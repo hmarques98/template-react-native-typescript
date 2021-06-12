@@ -1,12 +1,10 @@
-import { log } from '@utils/console';
+import React from 'react';
 import { WINDOW_DEVICE_WIDTH } from '@utils/constants';
 import { Box } from 'components/molecules/Box';
 import { Button } from 'components/molecules/Button';
 import { Typography } from 'components/molecules/Typography';
-import React, { useEffect } from 'react';
 import { IPeople } from 'src/interfaces/IPeople';
-import { theme } from 'theme';
-interface CardPeopleProps extends IPeople {
+interface CardPeopleProps extends Pick<IPeople, 'name' | 'homeworld'> {
   onPress: () => void;
 }
 const CardPeoples = ({ name, homeworld, onPress }: CardPeopleProps) => {
@@ -14,13 +12,14 @@ const CardPeoples = ({ name, homeworld, onPress }: CardPeopleProps) => {
     <Box width="100%">
       <Button
         width={WINDOW_DEVICE_WIDTH * 0.8}
-        px={'16px'}
-        m={2}
+        px={'ls'}
+        m={'xs'}
         key={name}
         variant="rounded"
         height={80}
         onPress={onPress}
-        bg={'primary'}>
+        bg={'primary'}
+        testID="Button">
         <Typography color={'secondary'}>{name}</Typography>
         <Typography color={'secondary'}>{homeworld}</Typography>
       </Button>
