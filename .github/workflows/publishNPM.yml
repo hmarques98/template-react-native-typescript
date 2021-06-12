@@ -1,8 +1,9 @@
 name: Publish and increment to NPM
-on: [push, workflow_dispatch]:
-  branches: [ main ]
-  paths:
-    - template/*
+on: 
+  push:
+    branches: [ main ]
+    paths:
+      - template/*
 jobs:
   publish:
     runs-on: ubuntu-latest
