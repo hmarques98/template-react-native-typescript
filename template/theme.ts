@@ -16,8 +16,7 @@ const theme: DefaultTheme = {
     secondary: colors.SECONDARY,
     black: colors.BLACK,
     white: colors.WHITE,
-    green: colors.GREEN,
-    grayLight: colors.GRAY_LIGHT,
+
     success: colors.SUCCESS,
     backgroundColor: colors.BACKGROUND_COLOR,
   },
@@ -31,8 +30,6 @@ const theme: DefaultTheme = {
     secondary: colors.SECONDARY,
     black: colors.BLACK,
     white: colors.WHITE,
-    green: colors.GREEN,
-    grayLight: colors.GRAY_LIGHT,
     success: colors.SUCCESS,
   },
   radii: {
@@ -54,8 +51,8 @@ const theme: DefaultTheme = {
     xxl: 64,
   },
   fonts: {
-    body: 'RobotoMono-Regular',
-    heading: 'RobotoMono-Bold',
+    body: typography.FONT_FAMILY_REGULAR,
+    heading: typography.FONT_FAMILY_BOLD,
   },
 };
 

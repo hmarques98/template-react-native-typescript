@@ -18,8 +18,6 @@ declare module 'styled-components' {
       secondary: string;
       white: string;
       black: string;
-      green: string;
-      grayLight: string;
       success: string;
       backgroundColor: string;
     };
@@ -41,8 +39,6 @@ declare module 'styled-components' {
       secondary: string;
       white: string;
       black: string;
-      green: string;
-      grayLight: string;
       success: string;
     };
     radii: {
