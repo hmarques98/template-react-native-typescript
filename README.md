@@ -2,6 +2,7 @@
 
 [![npm downloads](https://img.shields.io/npm/dt/@hmarques98/react-native-template-typescript.svg)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
 [![npm version](https://img.shields.io/npm/v/@hmarques98/react-native-template-typescript?color=44BC1C)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
+[![Publish and increment to NPM](https://github.com/hmarques98/template-react-native-typescript/actions/workflows/publishNPM.yml/badge.svg)](https://github.com/hmarques98/template-react-native-typescript/actions/workflows/publishNPM.yml)
 
 <p align="center" >
   <img
