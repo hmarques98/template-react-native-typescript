@@ -1,0 +1,44 @@
+import { RouteProp, useNavigation, useRoute } from '@react-navigation/core';
+import { StackNavigationProp } from '@react-navigation/stack';
+import { Box } from 'components/molecules/Box';
+import { Button } from 'components/molecules/Button';
+import { Typography } from 'components/molecules/Typography';
+import React from 'react';
+import { StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
+import { CommonStackParamList } from 'screens';
+import { theme } from 'theme';
+
+type {{pascalCase name}}ScreenNavigationProp = StackNavigationProp<
+  CommonStackParamList,
+  '{{pascalCase name}}'
+>;
+
+type {{pascalCase name}}ScreenRouteProp = RouteProp<CommonStackParamList, '{{pascalCase name}}'>;
+
+const {{pascalCase name}}Screen = () => {
+  const navigation = useNavigation<{{pascalCase name}}ScreenNavigationProp>();
+  const route = useRoute<{{pascalCase name}}ScreenRouteProp>();
+
+  return (
+    <SafeAreaView style={styles.safeArea}>
+      <Box alignItems="center" justifyContent="center" flex={1}>
+        <Typography>{{pascalCase name}}</Typography>
+        <Button onPress={() => {
+          navigation.goBack();
+          }}>
+          <Typography>Back {{pascalCase name}}</Typography>
+        </Button>
+      </Box>
+    </SafeAreaView>
+  );
+};
+
+const styles = StyleSheet.create({
+  safeArea: {
+    flex: 1,
+    backgroundColor: theme.colors.backgroundColor,
+  },
+});
+
+export default {{pascalCase name}}Screen;

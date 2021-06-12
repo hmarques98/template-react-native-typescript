@@ -1,5 +1,3 @@
-import { log } from '@utils/console';
-import React from 'react';
 import { Text } from 'react-native';
 import styled, { DefaultTheme } from 'styled-components/native';
 import {
@@ -15,8 +13,6 @@ import {
   typography,
   color,
   ColorProps,
-  FontFamilyProps,
-  fontFamily,
 } from 'styled-system';
 import { theme } from 'theme';
 
