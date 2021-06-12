@@ -34,6 +34,7 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['warn', { argsIgnorePattern: '^_' }],
     '@typescript-eslint/explicit-module-boundary-types': 0,
     'react/display-name': 0,
+    'jest/expect-expect': 0,
   },
   settings: {
     react: {

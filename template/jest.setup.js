@@ -2,11 +2,19 @@ import '@testing-library/jest-native/extend-expect';
 
 import mockRNCNetInfo from '@react-native-community/netinfo/jest/netinfo-mock.js';
 import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/async-storage-mock';
-
+import 'jest-styled-components';
+import * as styledSystem from 'styled-system';
 import { jest } from '@jest/globals';
+
+jest.useFakeTimers();
 
 jest.mock('@react-native-community/netinfo', () => mockRNCNetInfo);
 jest.mock('@react-native-async-storage/async-storage', () => mockAsyncStorage);
+
+jest.doMock('styled-system');
+jest.doMock('react-native-animatable');
+
+styledSystem.theme = jest.fn().mockImplementation((k) => k); //
 
 jest.doMock('@sentry/react-native', () => ({
   init: jest.fn(),
