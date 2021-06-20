@@ -88,6 +88,7 @@
     "babel-loader": "^8.2.2",
     "babel-plugin-module-resolver": "^4.1.0",
     "babel-plugin-styled-components": "^1.12.0",
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "detox": "^18.6.2",
     "eslint": "^7.14.0",
     "eslint-plugin-detox": "^1.0.0",
@@ -105,11 +106,11 @@
     "prettier": "^2.2.1",
     "react-dom": "17.0.1",
     "react-native-bundle-visualizer": "^2.2.1",
-    "react-test-renderer": "17.0.1",
-    "regenerator-runtime": "^0.13.7",
-    "typescript": "^3.8.3",
     "react-native-flipper": "^0.90.2",
-    "redux-flipper": "^1.4.2"
+    "react-test-renderer": "17.0.1",
+    "redux-flipper": "^1.4.2",
+    "regenerator-runtime": "^0.13.7",
+    "typescript": "^3.8.3"
   },
   "resolutions": {
     "@types/react": "^17"
