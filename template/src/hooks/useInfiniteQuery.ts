@@ -1,5 +1,5 @@
 import { useInfiniteQuery, useQuery } from 'react-query';
-import axios from '@services/axiosService';
+import axios from '@services/axios';
 import { log } from '@utils/console';
 interface useInfiniteQueryProps {
   queryName: string;

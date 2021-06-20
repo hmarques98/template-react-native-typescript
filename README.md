@@ -1,4 +1,4 @@
-# react-native-template-typescript
+# :iphone: React Native Template TypeScript
 
 [![npm downloads](https://img.shields.io/npm/dt/@hmarques98/react-native-template-typescript.svg)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
 [![npm version](https://img.shields.io/npm/v/@hmarques98/react-native-template-typescript?color=44BC1C)](https://www.npmjs.com/package/@hmarques98/react-native-template-typescript)
@@ -7,7 +7,7 @@
 <p align="center" >
   <img
     height="480px"
-    src="docs/assets/preview.png"
+    src="docs/assets/list_loaded.png"
     alt="Template landing screen preview"
   />
 </p>
@@ -15,6 +15,18 @@
 <br/>
 
 An opinionated template to bootstrap your next React Native app with all the time-wasting packages you need to have.
+
+In this template is started with example fetching datas from Star Wars Api, where is showing Peoples with Name and HomeWorld and in the next screen when on pressed more details about People. In /docs/assets there are more photos.
+## :star: Features in this template 
+- React Query for easy and more controlled requisitions.
+- CodePush integration.
+- Fastlane integration for automated builds.
+- BootSplash for faster splashScreen configurations.
+- Redux Toolkit for easy global state management.
+- StoryBook for components documentation.
+- React Testing Library and Detox for automated tests. 
+- Sentry for see logs in production.
+- And so much more.
 
 ## :computer: Contributions are very welcome 🤝
 
@@ -327,6 +339,7 @@ This template also has a [fastlane command](https://github.com/osamaq/react-nati
 
 ```
 root
+├── __mocks__
 ├── __tests__
 ├── android
 ├── ios
@@ -336,56 +349,71 @@ root
 |   └── rn_addons.js
 └── src
     └── components
-    |   └── Counter.tsx
-    |   └── CustomScreen.tsx
-    |   └── CustomText.tsx
-    |   └── LanguageButton.stories.tsx
-    |   └── LanguageButton.tsx
+    |   └── molecules
+            └── Box
+              └── Box.tsx
+              └── index.tsx
+              └── stories.tsx 
+            └── Button
+              └── Button.tsx
+              └── index.tsx
+              └── stories.tsx 
+            └── Typography
+              └── Typography.tsx
+              └── index.tsx
+              └── stories.tsx 
+    |   └── organisms
+            └── CardPeoples.tsx
     |   └── StatusBar.tsx
     |   └── stories.ts
     └── hooks
     |   └── useCustomBackBehaviour.tsx
-    |   └── useNetworkError.tsx
-    |   └── useStartupTime.tsx
+    |   └── useInfinityQuery.tsx
     |   └── useReactQuery.tsx
+    |   └── useOneSignal.tsx
+    |   └── useStartupTime.tsx
+    └── interfaces
+    |   └── IPeople.ts
     └── localization
     |   └── resources
     |   |   └── en.json
     |   |   └── index.ts
     |   |   └── ro.json
     |   └── index.tsx
-    └── modules
-    |   └── auth
-    |   |   └── hooks
-    |   |   |   └── useKeychainBiometrics.tsx
-    |   |   |   └── useKeychainCredentials.tsx
-    |   |   |   └── useSupportedBiometry.tsx
-    |   |   └── screens
-    |   |   |   └── index.tsx
-    |   |   |   └── Onboarding.tsx
-    |   |   |   └── ResetPassword.tsx
-    |   |   └── store
-    |   |   |   └── index.ts
-    |   └── <your_app_modules>
+    └── navigation
+    |   └── RootNavigation.tsx
+    |   └── Router.tsx
     └── navigation
     |   ├── RootNavigation.tsx
     |   └── Router.tsx
     └── screens
-    |   ├── CustomWebView.tsx
+    |   ├── CharacterDetail.tsx
     |   ├── Home.tsx
     |   ├── index.ts
-    |   └── NetworkError.tsx
     └── utils
-        ├── colors.ts
+        ├── constants.ts
         └── console.ts
     └── services
-        ├── axiosConfig.ts
+        ├── axios.ts
+    └── store
+        └── slices
+          └── auth.ts
+          └── index.ts
+        └── index.ts
+        └── rootReducer.ts
     └── styles
         ├── colors.ts
         ├── typography.ts
         ├── spacing.ts
         ├── index.ts
-
+├── plop-templates
+  └── CommonScreen.js.hbs
+  └── Component.js.hbs
+  └── ExportIndex.js.hbs
+  └── Stories.js.hbs
+├── e2e
+├── assets
+├── fastlane
 ```
 
 ## Credits

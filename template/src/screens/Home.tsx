@@ -17,7 +17,7 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 import { log } from '@utils/console';
 import useInfiniteReactQuery from 'hooks/useInfiniteQuery';
-import axios from '@services/axiosService';
+import axios from '@services/axios';
 
 type ProfileScreenNavigationProp = StackNavigationProp<
   CommonStackParamList,
