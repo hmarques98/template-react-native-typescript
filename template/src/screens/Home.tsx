@@ -125,6 +125,34 @@ const HomeScreen = () => {
 
   const { navigate } = useNavigation<ProfileScreenNavigationProp>();
 
+  const footerButton = ()=>{
+    return (
+      <Button
+                    my={'sm'}
+                    flexDirection="row"
+                    width={WINDOW_DEVICE_WIDTH * 0.8}
+                    backgroundColor={!hasNextPage ? 'secondary' : 'grayLight'}
+                    disabled>
+                    {isFetching || hasNextPage ? (
+                      <LottieView
+                        source={require('../../assets/spinner.json')}
+                        autoPlay
+                        loop
+                        hardwareAccelerationAndroid={false}
+                        resizeMode="contain"
+                        style={{
+                          height: 40,
+                          width: 40,
+                        }}
+                      />
+                    ) : (
+                      <Typography color={!hasNextPage ? 'primary' : 'secondary'}>
+                        All list is loaded
+                      </Typography>
+                    )}
+                  </Button>
+    )
+  }
   return (
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
@@ -186,37 +214,7 @@ const HomeScreen = () => {
               hasNextPage && handleMore();
             }}
             onEndReachedThreshold={0.1}
-            ListFooterComponent={() => {
-              if(isFetching){
-                return null;
-              }
-              return (
-                <Button
-                  my={'sm'}
-                  flexDirection="row"
-                  width={WINDOW_DEVICE_WIDTH * 0.8}
-                  backgroundColor={!hasNextPage ? 'secondary' : 'grayLight'}
-                  disabled>
-                  {isFetching || hasNextPage ? (
-                    <LottieView
-                      source={require('../../assets/spinner.json')}
-                      autoPlay
-                      loop
-                      hardwareAccelerationAndroid={false}
-                      resizeMode="contain"
-                      style={{
-                        height: 40,
-                        width: 40,
-                      }}
-                    />
-                  ) : (
-                    <Typography color={!hasNextPage ? 'primary' : 'secondary'}>
-                      All list is loaded
-                    </Typography>
-                  )}
-                </Button>
-              );
-            }}
+            ListFooterComponent={data && footerButton()}
           />
         </Box>
       </Box>
@@ -231,3 +229,5 @@ const styles = StyleSheet.create({
     backgroundColor: theme.colors.backgroundColor,
   },
 });
+
+
