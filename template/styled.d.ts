@@ -20,6 +20,7 @@ declare module 'styled-components' {
       black: string;
       success: string;
       backgroundColor: string;
+      grayLight:string;
     };
     typography: {
       FONT_REGULAR: string;

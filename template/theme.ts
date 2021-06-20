@@ -1,5 +1,5 @@
 import { DefaultTheme } from 'styled-components';
-import { colors, spacing, typography } from './src/styles/index';
+import { colors, typography } from './src/styles/index';
 
 const theme: DefaultTheme = {
   space: {
@@ -16,9 +16,9 @@ const theme: DefaultTheme = {
     secondary: colors.SECONDARY,
     black: colors.BLACK,
     white: colors.WHITE,
-
     success: colors.SUCCESS,
     backgroundColor: colors.BACKGROUND_COLOR,
+    grayLight: colors.GRAY_LIGHT
   },
   typography: {
     FONT_REGULAR: typography.FONT_FAMILY_REGULAR,
