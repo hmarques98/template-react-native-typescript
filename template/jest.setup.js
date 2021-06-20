@@ -5,6 +5,9 @@ import mockAsyncStorage from '@react-native-async-storage/async-storage/jest/asy
 import 'jest-styled-components';
 import * as styledSystem from 'styled-system';
 import { jest } from '@jest/globals';
+import { cleanup } from '@testing-library/react-native';
+
+afterEach(cleanup);
 
 jest.useFakeTimers();
 
