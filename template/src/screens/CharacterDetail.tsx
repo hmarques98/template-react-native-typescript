@@ -59,7 +59,7 @@ const CharacterDetailScreen = () => {
                 size={20}
               />
             </Box>
-            <Typography color="primary">Come back</Typography>
+            <Typography color="primary">Back</Typography>
           </Button>
         </Box>
       </Box>
