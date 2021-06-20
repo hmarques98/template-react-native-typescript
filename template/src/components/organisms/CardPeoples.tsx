@@ -20,8 +20,8 @@ const CardPeoples = ({ name, homeworld, onPress }: CardPeopleProps) => {
         onPress={onPress}
         bg={'primary'}
         testID="Button">
-        <Typography color={'secondary'}>{name}</Typography>
-        <Typography color={'secondary'}>{homeworld}</Typography>
+        <Typography color={'secondary'} mb='sm'>Name: {name}</Typography>
+        <Typography color={'secondary'}>HomeWorld: {homeworld}</Typography>
       </Button>
     </Box>
   );

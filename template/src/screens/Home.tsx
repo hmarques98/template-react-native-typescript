@@ -69,13 +69,16 @@ const HomeScreen = () => {
   );
 
   const getHomeWorldEachItem = useCallback(async () => {
+
+   
+    
     responseListWithoutHomeWorld
       .sort((a, b) => (String(a.name) > String(b.name) ? 0 : -1))
       .map(async (item) => {
         try {
-          if (item.homeworld.includes('http://swapi.dev/api/')) {
+          if (item.homeworld.includes('https://swapi.dev/api/')) {
             const replaceURL = item.homeworld.replace(
-              'http://swapi.dev/api/',
+              'https://swapi.dev/api/',
               '',
             );
 
@@ -126,7 +129,7 @@ const HomeScreen = () => {
     <SafeAreaView style={styles.safeArea}>
       <StatusBar barStyle="light-content" />
       <Box flex={1} alignItems="center" paddingTop={'sm'}>
-        <Typography color={'primary'} fontSize={'xl'} variant="bold">
+        <Typography color={'white'} fontSize={'xl'} variant="bold">
           STAR WARS API
         </Typography>
         <Box
@@ -184,14 +187,17 @@ const HomeScreen = () => {
             }}
             onEndReachedThreshold={0.1}
             ListFooterComponent={() => {
+              if(isFetching){
+                return null;
+              }
               return (
                 <Button
-                  my={3}
+                  my={'sm'}
                   flexDirection="row"
                   width={WINDOW_DEVICE_WIDTH * 0.8}
-                  backgroundColor={!hasNextPage ? 'secondary' : 'primary'}
+                  backgroundColor={!hasNextPage ? 'secondary' : 'grayLight'}
                   disabled>
-                  {isFetching ? (
+                  {isFetching || hasNextPage ? (
                     <LottieView
                       source={require('../../assets/spinner.json')}
                       autoPlay
@@ -199,8 +205,8 @@ const HomeScreen = () => {
                       hardwareAccelerationAndroid={false}
                       resizeMode="contain"
                       style={{
-                        height: 30,
-                        width: 30,
+                        height: 40,
+                        width: 40,
                       }}
                     />
                   ) : (
