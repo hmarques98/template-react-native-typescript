@@ -6,11 +6,9 @@ import { FileLogger } from 'react-native-file-logger';
 import { SENTRY_DSN, ENV, ONESIGNAL_ANDROID_KEY } from '@env';
 import * as Sentry from '@sentry/react-native';
 import codePush, { CodePushOptions } from 'react-native-code-push';
-import useAppState from 'react-native-appstate-hook';
 import { Provider } from 'react-redux';
 import store from '@store/index';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import { warn } from '@utils/console';
 import { theme } from 'theme';
 import { ThemeProvider } from 'styled-components';
 
@@ -36,12 +34,6 @@ const queryClient = new QueryClient();
 
 const App = () => {
   useNavigationMounting();
-
-  useAppState({
-    onChange: (newAppState) => warn('App state changed to ', newAppState),
-    onForeground: () => warn('App went to Foreground'),
-    onBackground: () => warn('App went to background'),
-  });
 
   return (
     <Provider store={store}>

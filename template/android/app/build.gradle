@@ -155,6 +155,7 @@ android {
         testBuildType System.getProperty('testBuildType', 'debug')  // This will later be used to control the test apk build type
         testInstrumentationRunner 'androidx.test.runner.AndroidJUnitRunner'
     }
+
     splits {
         abi {
             reset()
@@ -183,8 +184,17 @@ android {
     buildTypes {
         debug {
             signingConfig signingConfigs.debug
+            debuggable true
             resValue "string", "CodePushDeploymentKey", '""'
+            applicationIdSuffix ".debug"
         }
+
+        staging {
+            initWith debug
+            manifestPlaceholders = [hostName:"internal.helloWorld.com"]
+            applicationIdSuffix ".debugStaging"
+        }
+
         release {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
@@ -192,6 +202,18 @@ android {
             signingConfig signingConfigs.debug
             minifyEnabled enableProguardInReleaseBuilds
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+        }
+    }
+    // https://developer.android.com/studio/build/build-variants#groovy
+    productFlavors {
+        development {
+            applicationIdSuffix ".development"
+            versionNameSuffix "-development"
+        }
+
+        staging {
+            applicationIdSuffix ".staging"
+            versionNameSuffix "-staging"
         }
     }
 
@@ -222,7 +244,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-core:16.0.0'
     // implementation platform('com.google.firebase:firebase-bom:28.0.1')
     implementation 'androidx.multidex:multidex:2.0.1'
-    compile project(':react-native-vector-icons')
+    implementation project(':react-native-vector-icons')
 
     debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}") {
       exclude group:'com.facebook.fbjni'

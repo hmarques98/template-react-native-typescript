@@ -1,0 +1,2 @@
+json_key_file "fastlane/firebaseFastlane.json"
+# package_name "example.react.native.HelloWorld"

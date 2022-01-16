@@ -21,7 +21,8 @@
     "uninstall-android": "adb uninstall com.helloworld",
     "clear-android": "adb shell pm clear com.helloworld",
     "uninstall-iOS": "xcrun simctl uninstall booted org.reactjs.native.example.HelloWorld",
-    "build-qa:android": "bundle exec fastlane android bump_badge_build_staging"
+    "build-qa:android": "bundle exec fastlane android bump_badge_build_staging",
+    "buildBundleProduction": "fastlane android bump_badge_build_production_bundle"
   },
   "dependencies": {
     "@react-native-async-storage/async-storage": "^1.15.4",
@@ -32,12 +33,11 @@
     "@sentry/react-native": "^2.4.3",
     "axios": "^0.21.1",
     "i18next": "^20.2.2",
-    "lottie-ios": "3.1.8",
-    "lottie-react-native": "^4.0.2",
+    "lottie-ios": "3.2.3",
+    "lottie-react-native": "4.0.3",
     "react": "17.0.1",
     "react-i18next": "^11.8.15",
     "react-native": "0.64.1",
-    "react-native-appstate-hook": "^1.0.5",
     "react-native-bootsplash": "^3.2.3",
     "react-native-code-push": "^7.0.0",
     "react-native-dotenv": "^2.5.0",
