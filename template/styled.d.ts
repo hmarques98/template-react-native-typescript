@@ -1,6 +1,5 @@
 import 'styled-components';
 import 'styled-system';
-import { theme } from 'theme';
 
 declare module 'styled-components' {
   export interface DefaultTheme {
@@ -20,7 +19,7 @@ declare module 'styled-components' {
       black: string;
       success: string;
       backgroundColor: string;
-      grayLight:string;
+      grayLight: string;
     };
     typography: {
       FONT_REGULAR: string;

@@ -1,21 +1,16 @@
 import React from 'react';
-import { useNavigationMounting } from 'navigation/RootNavigation';
-import 'localization';
-import Router from 'navigation/Router';
-import { FileLogger } from 'react-native-file-logger';
-import { SENTRY_DSN, ENV, ONESIGNAL_ANDROID_KEY } from '@env';
+import { useNavigationMounting } from 'src/application/navigation/RootNavigation';
+import '@services/localization';
+import Router from 'src/application/navigation/Router';
+import { SENTRY_DSN } from '@env';
 import * as Sentry from '@sentry/react-native';
 import codePush, { CodePushOptions } from 'react-native-code-push';
 import { Provider } from 'react-redux';
-import store from '@store/index';
-import { QueryClient, QueryClientProvider } from 'react-query';
-import { theme } from 'theme';
-import { ThemeProvider } from 'styled-components';
 
-FileLogger.configure({
-  maximumFileSize: 1024 * 1024 * 5, // 5MB,
-  maximumNumberOfFiles: 3,
-});
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ThemeProvider } from 'styled-components';
+import { theme } from '@core/theme';
+import store from '@store/config';
 
 if (typeof SENTRY_DSN === 'string' && SENTRY_DSN.length > 0) {
   const routingInstrumentation = new Sentry.ReactNavigationV5Instrumentation();

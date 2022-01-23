@@ -145,7 +145,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.helloworld"
+        applicationId "com.example.helloWorld"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1

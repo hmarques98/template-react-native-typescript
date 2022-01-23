@@ -1,0 +1,20 @@
+{
+  "common": {
+    "hello": "Olá React Native!",
+    "increment": "Incrementar",
+    "chat": "Vamos conversar?",
+    "sendLogs": "Enviar",
+    "no_internet": "Sem conexão com a internet!",
+    "check_connection": "Verifique sua conexão com a internet.",
+    "go_back": "Voltar",
+    "logout": "Sair"
+  },
+  "languages": {
+    "en": "Inglês",
+    "br": "Português"
+  },
+  "onboarding": {
+    "sign": "Autenticar",
+    "forgot": "Esqueci minha senha"
+  }
+}
