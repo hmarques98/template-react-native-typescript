@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render, waitFor } from '@testing-library/react-native';
-import CardPeoples from 'components/organisms/CardPeoples';
+import CardPeoples from 'src/presentation/components/organisms/CardPeoples';
 
 describe('Card People Component', () => {
   const onPress = jest.fn();

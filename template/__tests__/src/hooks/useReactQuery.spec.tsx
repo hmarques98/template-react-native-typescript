@@ -1,7 +1,6 @@
 import React from 'react';
 import { renderHook, act } from '@testing-library/react-hooks';
-import { log } from '@utils/console';
-import useReactQuery from 'hooks/useReactQuery';
+import useReactQuery from 'src/application/hooks/useReactQuery';
 import { QueryClient, QueryClientProvider } from 'react-query';
 
 const queryClient = new QueryClient();
@@ -62,7 +61,7 @@ describe('useReactQuery Hook', () => {
     expect(result.current.data).toMatchObject(mockData.data);
   });
 
-  test('should to call refetch from hook ', async () => {
+  test('should to call refetch from hook', async () => {
     const { result, waitForNextUpdate } = renderHook(
       () =>
         useReactQuery<{ data: any }>({
@@ -73,13 +72,15 @@ describe('useReactQuery Hook', () => {
         wrapper: QueryProvider,
       },
     );
-    const mockRefetch = jest.fn().mockImplementationOnce(()=>result.current.refetch()) 
+    const mockRefetch = jest
+      .fn()
+      .mockImplementationOnce(() => result.current.refetch());
 
     act(() => {
-      mockRefetch()
+      mockRefetch();
     });
 
-    await waitForNextUpdate({timeout:5000});
+    await waitForNextUpdate({ timeout: 5000 });
 
     expect(mockRefetch).toBeCalledTimes(1);
   });

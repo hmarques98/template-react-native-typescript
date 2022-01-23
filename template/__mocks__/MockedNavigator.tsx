@@ -6,13 +6,17 @@ const Stack = createStackNavigator();
 
 type Props = {
   component: ComponentType<any>;
-  params: {};
+  params: unknown;
 };
 const MockedNavigator = ({ component, params = {} }: Props) => {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="MockedScreen" component={component} initialParams={params} />
+        <Stack.Screen
+          name="MockedScreen"
+          component={component}
+          initialParams={params}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
