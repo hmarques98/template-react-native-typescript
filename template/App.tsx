@@ -1,7 +1,5 @@
 import React from 'react';
-import { useNavigationMounting } from 'src/application/navigation/RootNavigation';
-import '@services/localization';
-import Router from 'src/application/navigation/Router';
+import '@business/services/localization';
 import { SENTRY_DSN } from '@env';
 import * as Sentry from '@sentry/react-native';
 import codePush, { CodePushOptions } from 'react-native-code-push';
@@ -10,7 +8,9 @@ import { Provider } from 'react-redux';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ThemeProvider } from 'styled-components';
 import { theme } from '@core/theme';
-import store from '@store/config';
+import store from '@store/index';
+import Router from '@application/navigation/Router';
+import { useNavigationMounting } from '@application/navigation/RootNavigation';
 
 if (typeof SENTRY_DSN === 'string' && SENTRY_DSN.length > 0) {
   const routingInstrumentation = new Sentry.ReactNavigationV5Instrumentation();
