@@ -8,7 +8,7 @@ import { FlatList } from 'react-native-gesture-handler';
 import LottieView from 'lottie-react-native';
 import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
-import useInfiniteReactQuery from 'src/application/hooks/useInfiniteQuery';
+import useInfiniteReactQuery from '@application/hooks/useInfiniteQuery';
 import { CardPeoples } from './components';
 import network from '@business/services/network';
 import { CommonStackParamList } from '..';
@@ -129,7 +129,7 @@ const HomeScreen = () => {
         disabled>
         {isFetching || hasNextPage ? (
           <LottieView
-            source={require('../../assets/spinner.json')}
+            source={require('@core/assets/spinner.json')}
             autoPlay
             loop
             hardwareAccelerationAndroid={false}
@@ -162,7 +162,7 @@ const HomeScreen = () => {
           {isLoading && (
             <Box height={120} width="100%" alignItems="center">
               <LottieView
-                source={require('../../assets/spinner.json')}
+                source={require('@core/assets/spinner.json')}
                 autoPlay
                 loop
                 hardwareAccelerationAndroid={false}

@@ -90,7 +90,7 @@ import com.android.build.OutputFile
  */
 
 project.ext.react = [
-    enableHermes: false,  // clean and rebuild if changing
+    enableHermes: true,  // clean and rebuild if changing
 ]
 
 apply from: "../../node_modules/react-native/react.gradle"
@@ -145,7 +145,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "com.example.helloWorld"
+        applicationId "com.helloworld"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -186,13 +186,6 @@ android {
             signingConfig signingConfigs.debug
             debuggable true
             resValue "string", "CodePushDeploymentKey", '""'
-            applicationIdSuffix ".debug"
-        }
-
-        staging {
-            initWith debug
-            manifestPlaceholders = [hostName:"internal.helloWorld.com"]
-            applicationIdSuffix ".debugStaging"
         }
 
         release {
@@ -205,17 +198,6 @@ android {
         }
     }
     // https://developer.android.com/studio/build/build-variants#groovy
-    productFlavors {
-        development {
-            applicationIdSuffix ".development"
-            versionNameSuffix "-development"
-        }
-
-        staging {
-            applicationIdSuffix ".staging"
-            versionNameSuffix "-staging"
-        }
-    }
 
     // applicationVariants are e.g. debug, release
     applicationVariants.all { variant ->

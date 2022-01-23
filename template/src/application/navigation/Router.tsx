@@ -30,7 +30,9 @@ export default function Router() {
       linking={linking}
       ref={navigationRef}
       onReady={() => {
-        RNBootSplash.hide({ fade: true }); // fade
+        setTimeout(() => {
+          RNBootSplash.hide({ fade: true }); // fade
+        }, 3000);
       }}>
       <SafeAreaProvider>
         <Stack.Navigator screenOptions={screenOptions}>

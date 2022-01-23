@@ -27,7 +27,6 @@ module.exports = {
           '@features/components': './src/features/components',
           '@features/modules': './src/features/modules',
           '@store': './src/store',
-          '@store/config': './src/store/index',
         },
       },
     ],

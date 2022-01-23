@@ -1,4 +1,4 @@
-package com.example.helloWorld;
+package com.helloworld;
 
 import android.os.Bundle; // <- add this necessary import
 import com.facebook.react.ReactActivity;

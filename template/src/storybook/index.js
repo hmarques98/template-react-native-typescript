@@ -6,7 +6,7 @@ import {
 } from '@storybook/react-native';
 import { withKnobs } from '@storybook/addon-knobs';
 import { ThemeProvider } from 'styled-components';
-import { theme } from '../theme';
+import { theme } from '@core/theme';
 // Refer to https://github.com/storybookjs/react-native/tree/master/app/react-native#start-command-parameters
 
 const getStorybookUIRoot = () => {
@@ -17,7 +17,7 @@ const getStorybookUIRoot = () => {
   ));
 
   configure(() => {
-    require('../src/features/components/stories');
+    require('../features/components/stories');
   }, module);
   return getStorybookUI({
     asyncStorage:

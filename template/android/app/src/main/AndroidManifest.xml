@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  package="com.example.helloWorld">
+  package="com.helloworld">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -36,7 +36,7 @@
             <action android:name="android.intent.action.VIEW" />
             <category android:name="android.intent.category.DEFAULT" />
             <category android:name="android.intent.category.BROWSABLE" />
-            <!-- Accepts URIs that begin with "http://www.example.com.example.helloWorld” -->
+            <!-- Accepts URIs that begin with "http://www.example.com.helloworld” -->
             <data android:scheme="http"
                   android:host="www.example.com"
                   android:pathPrefix="/HelloWorld" />

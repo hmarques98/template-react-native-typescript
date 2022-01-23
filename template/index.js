@@ -1,10 +1,10 @@
 import { AppRegistry, LogBox } from 'react-native';
 import App from './App';
 import { name as appName } from './app.json';
-import getStorybookUI from './storybook';
+import getStorybookUI from './src/storybook';
 import { enableScreens } from 'react-native-screens';
 enableScreens();
-LogBox.ignoreLogs(['Setting a timer']);
+LogBox.ignoreLogs(['Setting a timer', 'Require cycle']);
 let EntryPoint;
 const showStorybook = false;
 
